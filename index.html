@@ -46,7 +46,7 @@
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
-            background-color: transparent; /* Transparent background for cells */
+            background-color: inherit; /* Transparent background for cells */
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -57,17 +57,17 @@
         }
 
         tbody tr {
-            background-color: #000; /* Black background for rows */
+            background-color: inherit; /* Ensuring rows match the body background */
         }
 
         /* Dark Mode Table Styling */
         body.night-mode tbody tr {
-            background-color: #333; /* Dark background for night mode */
+            background-color: #2e2e2e; /* Dark background for night mode rows */
         }
 
         body.night-mode td, body.night-mode th {
-            background-color: #444; 
-            color: #ccc; /* Light text in the dark table for readability */
+            background-color: #2e2e2e; 
+            color: #ccc; /* Light text in dark table for readability */
         }
 
         /* Profile Picture Container */
@@ -260,7 +260,7 @@
         themeToggle.addEventListener('click', function() {
             body.classList.toggle('night-mode');
             
-            // Switch the emoji based on the theme
+            // Change the emoji based on the mode
             if (body.classList.contains('night-mode')) {
                 themeToggle.textContent = '🌞'; // Sun emoji for night mode
             } else {
@@ -271,4 +271,5 @@
 
 </body>
 </html>
+
 
