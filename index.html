@@ -4,50 +4,72 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table with Profile Picture and Theme Toggle</title>
-    <!-- Link to Google Fonts for Menlo -->
-    <link href="https://fonts.googleapis.com/css2?family=Menlo:wght@400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Menlo&display=swap" rel="stylesheet">
     <style>
-        /* Reset the body and text styles */
+        /* Basic Reset */
         body, h2, p {
             margin: 0;
             padding: 0;
-            font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-            background-color: #D3D3D3;
-            color: #333;
-            transition: background-color 0.3s, color 0.3s;
+            font-family: 'Menlo', monospace; /* Set font to Menlo */
         }
 
-        /* Body and content container */
-        .wrapper {
-            width: 90%; /* Adjusted for better mobile readability */
-            max-width: 1200px; /* Set max-width for large screens */
-            margin: 0 auto; /* Center horizontally */
-            padding: 20px; /* Add padding */
-            background-color: inherit; /* Match background color */
-            box-sizing: border-box; /* Include padding in width calculation */
+        /* Default Light Mode (Day) */
+        body {
+            background-color: #D3D3D3;
+            color: #333;
+            padding: 20px;
+            transition: background-color 0.3s, color 0.3s;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            margin-bottom: 20px;
         }
 
         /* Dark Mode (Night) */
         body.night-mode {
             background-color: #2e2e2e;
-            color: #fff;
+            color: #ccc; /* Lighter color for text in dark mode */
         }
 
-        /* Theme toggle button */
-        .theme-toggle {
-            font-size: 30px;
-            cursor: pointer;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-            transition: transform 0.3s;
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px auto;
+            transition: background-color 0.3s;
         }
 
-        .theme-toggle:hover {
-            transform: scale(1.2);
+        td, th {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s;
         }
 
-        /* Profile Picture */
+        th {
+            background-color: #007BFF;
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        tbody tr {
+            background-color: #f9f9f9;
+        }
+
+        /* Dark Mode Table Styling */
+        body.night-mode tbody tr {
+            background-color: #333;
+        }
+
+        body.night-mode td, body.night-mode th {
+            background-color: #444; 
+            color: #ccc; /* Light text in the dark table for readability */
+        }
+
+        /* Profile Picture Container */
         .profile-container {
             display: flex;
             align-items: center;
@@ -63,6 +85,7 @@
             margin-right: 20px;
         }
 
+        /* About Section */
         .about-section {
             margin-bottom: 30px;
         }
@@ -72,105 +95,44 @@
             line-height: 1.5;
         }
 
-        /* Table Styling */
-        table {
-            width: 100%; /* Make the table span the full width */
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: inherit; /* Make table background match page background */
-            transition: background-color 0.3s;
+        /* Sun/Moon Toggle Styling */
+        .theme-toggle {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: transform 0.3s;
         }
 
-        td, th {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-            color: inherit; /* Ensure text color is inherited from body */
+        /* Hover effect */
+        .theme-toggle:hover {
+            transform: scale(1.2);
         }
 
-        th {
-            color: inherit; /* Ensure table header text color is consistent */
-            font-weight: bold;
-            font-size: 18px;
-            background-color: inherit; /* Remove blue background */
-        }
-
-        tbody tr {
-            background-color: inherit; /* Match table background with page background */
-        }
-
-        /* Dark Mode Table Styling */
-        body.night-mode tbody tr {
-            background-color: #444; /* Darker background for table cells in night mode */
-        }
-
-        body.night-mode td, body.night-mode th {
-            background-color: #555; /* Darker table cells in night mode */
-        }
-
-        /* Social Links Styling */
-        .social-links {
-            margin-top: 20px;
-            text-align: center;
-        }
-
+        /* Social Links Section */
         .social-links a {
-            color: inherit; /* Link color matches body text color */
+            font-size: 16px;
+            color: inherit; /* Use the same color as the text */
             text-decoration: none;
-            font-size: 18px;
-            margin: 0 10px;
+            padding: 10px 15px;
+            transition: color 0.3s;
         }
 
         .social-links a:hover {
-            text-decoration: underline;
+            color: #007BFF; /* Highlight on hover */
         }
 
-        /* Section with bullet-like lists using '>' */
-        .bullet-list-section {
-            margin-top: 40px;
-        }
-
-        .bullet-list-section h3 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
+        /* Bullet List Styling */
         .bullet-list-section p {
-            margin: 5px 0;
+            font-size: 16px;
+            line-height: 1.5;
         }
 
-        .bullet-list-section p::before {
-            content: "> ";
-            font-weight: bold;
-        }
-
-        /* Responsive Adjustments for Tables */
+        /* Responsive Design */
         @media (max-width: 768px) {
-            table, thead, tbody, th, td, tr {
-                display: block; /* Stack table rows on mobile */
-            }
-
-            th, td {
-                width: 100%; /* Make cells take full width */
-                box-sizing: border-box; /* Ensure padding does not affect width */
-            }
-
-            th {
-                background-color: inherit; /* Keep header background matching body */
-                position: relative; /* Make headers take up full width */
-            }
-
-            td {
-                text-align: left;
-                padding-left: 50%; /* Indent content for better visibility */
-                position: relative;
-            }
-
-            td::before {
-                content: attr(data-label); /* Add a label to each cell */
-                position: absolute;
-                left: 10px;
-                font-weight: bold;
+            table {
+                width: 90%;
             }
         }
     </style>
@@ -180,114 +142,116 @@
     <!-- Theme Toggle Button (Sun/Moon Emoji) -->
     <span class="theme-toggle" id="theme-toggle">🌙</span>
 
-    <!-- Wrapper for all content -->
-    <div class="wrapper">
-        <!-- Profile Picture Section -->
-        <div class="profile-container">
-            <img src="https://via.placeholder.com/100" alt="Profile Picture">
-            <div>
-                <h2>David Walsh</h2>
-                <p>Head of Sales.</p>
-            </div>
+    <!-- Profile Picture Section -->
+    <div class="profile-container">
+        <!-- Replace the src with your actual profile picture -->
+        <img src="https://via.placeholder.com/100" alt="Profile Picture">
+        <div>
+            <h2>David Walsh</h2>
+            <p>Head of Sales.</p>
         </div>
-
-        <!-- About Section -->
-        <div class="about-section">
-            <h2>About Me</h2>
-            <p>
-                David Walsh is Alluvial's Sales Lead and has been involved in the staking industry for more than 3 years. Before Alluvial, David was the Head of Business at Staking Rewards - the industry’s leading data & research platform. David played a key role in growing the Staking Rewards business to hundreds of thousands of monthly users while simultaneously growing the client base to ~150+ enterprise customers including Bloomberg, TradingView, and Coinbase. Before Staking Rewards, David was a Senior Consultant at EY working in the Financial Services space. In 2018, David graduated with an MSc in Management from UCD. He also holds a BA in Economics from UCC.
-            </p>
-        </div>
-
-        <!-- Table Section -->
-        <h2>Example Table with 8 Rows and 3 Columns</h2>
-        <table>
-            <thead>
-                <tr>
-                    <th>Projects</th>
-                    <th>Role</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Alluvial Finance / Liquid Collective</td>
-                    <td>Head of Sales</td>
-                    <td>Lead Sales and BD at the Institutional LST</td>
-                </tr>
-                <tr>
-                    <td>Staking Rewards</td>
-                    <td>Head of Sales and Partnerships</td>
-                    <td>Responsible for scaling partnerships and enterprise clients</td>
-                </tr>
-                <tr>
-                    <td>Row 3, Data 1</td>
-                    <td>Row 3, Data 2</td>
-                    <td>Row 3, Data 3</td>
-                </tr>
-                <tr>
-                    <td>Row 4, Data 1</td>
-                    <td>Row 4, Data 2</td>
-                    <td>Row 4, Data 3</td>
-                </tr>
-                <tr>
-                    <td>Row 5, Data 1</td>
-                    <td>Row 5, Data 2</td>
-                    <td>Row 5, Data 3</td>
-                </tr>
-                <tr>
-                    <td>Row 6, Data 1</td>
-                    <td>Row 6, Data 2</td>
-                    <td>Row 6, Data 3</td>
-                </tr>
-                <tr>
-                    <td>Row 7, Data 1</td>
-                    <td>Row 7, Data 2</td>
-                    <td>Row 7, Data 3</td>
-                </tr>
-                <tr>
-                    <td>Row 8, Data 1</td>
-                    <td>Row 8, Data 2</td>
-                    <td>Row 8, Data 3</td>
-                </tr>
-            </tbody>
-        </table>
-
-        <!-- New Section 1: Bullet List -->
-        <div class="bullet-list-section">
-            <h3>Projects Overview</h3>
-            <p> > Alluvial Finance: Focused on institutional liquid staking</p>
-            <p> > Staking Rewards: Leading platform for staking research</p>
-                        <p> > Collaboration with major players like Bloomberg</p>
-            <p> > Expansion into new markets</p>
-        </div>
-
-        <!-- New Section 2: Bullet List -->
-        <div class="bullet-list-section">
-            <h3>Key Achievements</h3>
-            <p> > Increased monthly users significantly</p>
-            <p> > Scaled partnerships with top financial institutions</p>
-            <p> > Contributed to research initiatives</p>
-            <p> > Lead a team to drive business success</p>
-        </div>
-
-        <!-- Social Links Section -->
-        <div class="social-links">
-            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
-        </div>
-
     </div>
 
+    <!-- About Section -->
+    <div class="about-section">
+        <h2>About Me</h2>
+        <p>
+            David Walsh is Alluvial's Sales Lead and has been involved in the staking industry for more than 3 years. Before Alluvial, David was the Head of Business at Staking Rewards - the industry’s leading data & research platform. David played a key role in growing the Staking Rewards business to hundreds of thousands of monthly users while simultaneously growing the client base to ~150+ enterprise customers including Bloomberg, TradingView, and Coinbase. Before Staking Rewards, David was a Senior Consultant at EY working in the Financial Services space. In 2018, David graduated with an MSc in Management from UCD. He also holds a BA in Economics from UCC.
+        </p>
+    </div>
+
+    <!-- Table Section -->
+    <h2>Example Table with 8 Rows and 3 Columns</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Projects</th>
+                <th>Role</th>
+                <th>Description</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td> Alluvial Finance / Liquid Collective</td>
+                <td> Head of Sales</td>
+                <td> Lead Sales and BD at the Institutional LST </td>
+            </tr>
+            <tr>
+                <td>Staking Rewards </td>
+                <td> Head of Sales and Partnerships </td>
+                <td> blah </td>
+            </tr>
+            <tr>
+                <td>Row 3, Data 1</td>
+                <td>Row 3, Data 2</td>
+                <td>Row 3, Data 3</td>
+            </tr>
+            <tr>
+                <td>Row 4, Data 1</td>
+                <td>Row 4, Data 2</td>
+                <td>Row 4, Data 3</td>
+            </tr>
+            <tr>
+                <td>Row 5, Data 1</td>
+                <td>Row 5, Data 2</td>
+                <td>Row 5, Data 3</td>
+            </tr>
+            <tr>
+                <td>Row 6, Data 1</td>
+                <td>Row 6, Data 2</td>
+                <td>Row 6, Data 3</td>
+            </tr>
+            <tr>
+                <td>Row 7, Data 1</td>
+                <td>Row 7, Data 2</td>
+                <td>Row 7, Data 3</td>
+            </tr>
+            <tr>
+                <td>Row 8, Data 1</td>
+                <td>Row 8, Data 2</td>
+                <td>Row 8, Data 3</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- Bullet List Section 1 -->
+    <div class="bullet-list-section">
+        <h3>Key Projects</h3>
+        <p> > Collaboration with major players like Bloomberg</p>
+        <p> > Expansion into new markets</p>
+    </div>
+
+    <!-- Bullet List Section 2 -->
+    <div class="bullet-list-section">
+        <h3>Key Achievements</h3>
+        <p> > Increased monthly users significantly</p>
+        <p> > Scaled partnerships with top financial institutions</p>
+        <p> > Contributed to research initiatives</p>
+        <p> > Lead a team to drive business success</p>
+    </div>
+
+    <!-- Social Links Section -->
+    <div class="social-links">
+        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    </div>
+
+    <!-- JavaScript to toggle between day and night mode -->
     <script>
-        // Theme toggle functionality
-        const themeToggleButton = document.getElementById('theme-toggle');
-        themeToggleButton.addEventListener('click', () => {
-            document.body.classList.toggle('night-mode');
-            if (document.body.classList.contains('night-mode')) {
-                themeToggleButton.textContent = '🌞'; // Change to sun emoji for night mode
+        // Get the theme toggle element and the body element
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Function to toggle between day and night mode
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('night-mode');
+            
+            // Switch the emoji based on the theme
+            if (body.classList.contains('night-mode')) {
+                themeToggle.textContent = '🌞';  // Sun emoji for night mode
             } else {
-                themeToggleButton.textContent = '🌙'; // Change to moon emoji for day mode
+                themeToggle.textContent = '🌙';  // Moon emoji for day mode
             }
         });
     </script>
@@ -295,6 +259,5 @@
 </body>
 </html>
 
-           
 
             
