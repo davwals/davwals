@@ -4,14 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table with Profile Picture and Theme Toggle</title>
-    <!-- Update font to Menlo -->
     <style>
         /* Basic Reset */
         body, h1, h2, p, table, th, td, span, a {
             margin: 0;
             padding: 0;
             font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace; /* Use Menlo and fallback to other monospace fonts */
-            font-size: 16px; /* Default font size */
+            font-size: 16px;
         }
 
         /* Default Light Mode (Day) */
@@ -20,19 +19,18 @@
             color: #333;
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
-            max-width: 1200px; /* Limit the max width of the page content */
-            margin: 0 auto;  /* Center the content */
+            max-width: 1200px;
+            margin: 0 auto;
         }
 
         h1, h2 {
-            font-size: 24px; /* Larger font size for headings */
+            font-size: 24px;
             font-weight: bold;
             margin-bottom: 20px;
         }
 
         p {
-            line-height: 1.6; /* Improve readability */
-            font-weight: normal;
+            line-height: 1.6;
         }
 
         /* Dark Mode (Night) */
@@ -43,40 +41,26 @@
 
         /* Table Styling */
         table {
-            width: 60%; /* Make the table narrower */
-            max-width: 800px; /* Optional: limit max width of the table */
-            margin: 20px auto; /* Center the table horizontally */
+            width: 60%;
+            max-width: 800px;
+            margin: 20px auto;
             border-collapse: collapse;
-            transition: background-color 0.3s;
+            background-color: inherit; /* Match table background to body background */
+            color: inherit; /* Match text color to body color */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         th, td {
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
-            font-size: 16px; /* Consistent font size in the table */
+            background-color: inherit; /* Match table cells to table background */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         th {
             background-color: #007BFF; /* Blue for header row */
             color: white;
-            font-weight: bold;
-        }
-
-        tbody tr {
-            background-color: #f9f9f9; /* Default for light mode */
-        }
-
-        body.night-mode tbody tr {
-            background-color: #333; /* Dark background for night mode */
-        }
-
-        body.night-mode th {
-            background-color: #0056b3; /* Adjust header for dark mode */
-        }
-
-        body.night-mode td {
-            background-color: #444; /* Darker table cells for night mode */
         }
 
         /* Profile picture container */
@@ -92,7 +76,7 @@
             width: 100px;
             height: 100px;
             border: 2px solid #ddd;
-            margin-right: 20px; /* Add space between the profile picture and the text */
+            margin-right: 20px;
         }
 
         /* About Section */
@@ -110,7 +94,6 @@
             transition: transform 0.3s;
         }
 
-        /* Hover effect */
         .theme-toggle:hover {
             transform: scale(1.2);
         }
@@ -125,17 +108,17 @@
 
         .social-buttons a {
             display: inline-block;
-            background-color: #007BFF; /* Blue background */
+            background-color: #007BFF;
             color: white;
-            font-size: 16px; /* Consistent font size */
+            font-size: 16px;
             padding: 10px 20px;
-            border-radius: 30px; /* Rounded corners */
+            border-radius: 30px;
             text-decoration: none;
             transition: background-color 0.3s;
         }
 
         .social-buttons a:hover {
-            background-color: #0056b3; /* Darker blue on hover */
+            background-color: #0056b3;
         }
     </style>
 </head>
@@ -194,20 +177,12 @@
 
     <!-- JavaScript to toggle between day and night mode -->
     <script>
-        // Get the theme toggle element and the body element
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
 
-        // Function to toggle between day and night mode
         themeToggle.addEventListener('click', function() {
             body.classList.toggle('night-mode');
-            
-            // Switch the emoji based on the theme
-            if (body.classList.contains('night-mode')) {
-                themeToggle.textContent = '🌞';  // Sun emoji for night mode
-            } else {
-                themeToggle.textContent = '🌙';  // Moon emoji for day mode
-            }
+            themeToggle.textContent = body.classList.contains('night-mode') ? '🌞' : '🌙';
         });
     </script>
 
