@@ -17,10 +17,8 @@
         body {
             background-color: #D3D3D3;
             color: #333;
-            padding: 40px; /* Add thicker padding around the entire content */
+            padding: 40px 15%; /* Add thicker padding around the entire content with 15% margin */
             transition: background-color 0.3s, color 0.3s;
-            max-width: 1200px;
-            margin: 0 auto; /* Center the page */
         }
 
         h2 {
@@ -37,7 +35,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin: 20px auto;
+            margin: 20px 0;
             background-color: inherit; /* Ensure background matches the body */
         }
 
@@ -75,8 +73,7 @@
             align-items: center;
             justify-content: flex-start;
             margin-bottom: 20px;
-            width: 75%; /* Ensure the profile section stays at 75% width */
-            margin: 0 auto; /* Center the profile section */
+            width: 100%;
         }
 
         .profile-container img {
@@ -90,8 +87,7 @@
         /* About Section */
         .about-section {
             margin-bottom: 30px;
-            width: 75%; /* Ensure the about section stays at 75% width */
-            margin: 0 auto; /* Center the about section */
+            width: 100%; /* Ensuring the section takes full width */
         }
 
         .about-section p {
@@ -124,8 +120,7 @@
         .social-links {
             text-align: center;
             margin-top: 40px;
-            width: 75%; /* Ensure the social links stay at 75% width */
-            margin: 0 auto; /* Center the social links */
+            width: 100%;
         }
 
         .social-links a {
@@ -143,6 +138,9 @@
 
         /* Responsive Design */
         @media (max-width: 768px) {
+            body {
+                padding: 20px 10%;
+            }
             table {
                 width: 90%;
             }
