@@ -35,7 +35,7 @@
 
         /* Table Styling */
         table {
-            width: 75%;
+            width: 100%;
             border-collapse: collapse;
             margin: 20px auto;
             background-color: inherit; /* Ensure background matches the body */
@@ -76,6 +76,7 @@
             align-items: center;
             justify-content: flex-start;
             margin-bottom: 20px;
+            width: 75%; /* Ensuring 75% width */
         }
 
         .profile-container img {
@@ -89,6 +90,7 @@
         /* About Section */
         .about-section {
             margin-bottom: 30px;
+            width: 75%; /* Ensuring 75% width */
         }
 
         .about-section p {
@@ -140,6 +142,11 @@
         @media (max-width: 768px) {
             table {
                 width: 90%;
+            }
+
+            .profile-container,
+            .about-section {
+                width: 90%; /* Ensuring responsiveness */
             }
         }
     </style>
@@ -255,16 +262,12 @@
             
             // Switch the emoji based on the theme
             if (body.classList.contains('night-mode')) {
-                themeToggle.textContent = '🌞';  // Sun emoji for night mode
+                themeToggle.textContent = '🌞'; // Sun emoji for night mode
             } else {
-                themeToggle.textContent = '🌙';  // Moon emoji for day mode
+                themeToggle.textContent = '🌙'; // Moon emoji for day mode
             }
         });
     </script>
 
 </body>
 </html>
-
-
-
-            
