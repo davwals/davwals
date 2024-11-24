@@ -4,19 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table with Profile Picture and Theme Toggle</title>
-    <!-- Link to Google Fonts for Roboto -->
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Update font to Menlo -->
     <style>
         /* Basic Reset */
-        body, h2, p {
+        body, h1, h2, p, table, th, td, span, a {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', sans-serif; /* Set font to Roboto */
+            font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace; /* Use Menlo and fallback to other monospace fonts */
+            font-size: 16px; /* Default font size */
         }
 
         /* Default Light Mode (Day) */
         body {
-            background-color:  #D3D3D3;
+            background-color: #D3D3D3;
             color: #333;
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
@@ -24,8 +24,15 @@
             margin: 0 auto;  /* Center the content */
         }
 
-        h2 {
+        h1, h2 {
+            font-size: 24px; /* Larger font size for headings */
+            font-weight: bold;
             margin-bottom: 20px;
+        }
+
+        p {
+            line-height: 1.6; /* Improve readability */
+            font-weight: normal;
         }
 
         /* Dark Mode (Night) */
@@ -43,35 +50,32 @@
             transition: background-color 0.3s;
         }
 
-        td, th {
+        th, td {
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
-            transition: background-color 0.3s;
+            font-size: 16px; /* Consistent font size in the table */
         }
 
         th {
             background-color: #007BFF; /* Blue for header row */
             color: white;
             font-weight: bold;
-            font-size: 18px;
-        }
-
-        tr:first-child th {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 20px;
         }
 
         tbody tr {
             background-color: #f9f9f9; /* Default for light mode */
         }
 
-        /* Dark Mode Table Styling */
         body.night-mode tbody tr {
             background-color: #333; /* Dark background for night mode */
         }
 
-        body.night-mode td, body.night-mode th {
+        body.night-mode th {
+            background-color: #0056b3; /* Adjust header for dark mode */
+        }
+
+        body.night-mode td {
             background-color: #444; /* Darker table cells for night mode */
         }
 
@@ -94,11 +98,6 @@
         /* About Section */
         .about-section {
             margin-bottom: 30px;
-        }
-
-        .about-section p {
-            font-size: 16px;
-            line-height: 1.5;
         }
 
         /* Sun/Moon Toggle Styling */
@@ -128,7 +127,7 @@
             display: inline-block;
             background-color: #007BFF; /* Blue background */
             color: white;
-            font-size: 16px;
+            font-size: 16px; /* Consistent font size */
             padding: 10px 20px;
             border-radius: 30px; /* Rounded corners */
             text-decoration: none;
@@ -147,7 +146,6 @@
 
     <!-- Profile Picture Section -->
     <div class="profile-container">
-        <!-- Replace the src with your actual profile picture -->
         <img src="https://via.placeholder.com/100" alt="Profile Picture">
         <div>
             <h2>David Walsh</h2>
@@ -169,51 +167,21 @@
     <table>
         <thead>
             <tr>
-                <th>Prjoects</th>
+                <th>Projects</th>
                 <th>Role</th>
                 <th>Description</th>
             </tr>
         </thead>
         <tbody>
             <tr>
-                <td> Alluvial Finance / Liquid Collective</td>
-                <td> Head of Sales</td>
-                <td> Lead Sales and BD at the Institutional LST </td>
+                <td>Alluvial Finance / Liquid Collective</td>
+                <td>Head of Sales</td>
+                <td>Lead Sales and BD at the Institutional LST</td>
             </tr>
             <tr>
-                <td>Staking Rewards </td>
-                <td> Head of Sales and Partnerships </td>
-                <td> blah </td>
-            </tr>
-            <tr>
-                <td>Row 3, Data 1</td>
-                <td>Row 3, Data 2</td>
-                <td>Row 3, Data 3</td>
-            </tr>
-            <tr>
-                <td>Row 4, Data 1</td>
-                <td>Row 4, Data 2</td>
-                <td>Row 4, Data 3</td>
-            </tr>
-            <tr>
-                <td>Row 5, Data 1</td>
-                <td>Row 5, Data 2</td>
-                <td>Row 5, Data 3</td>
-            </tr>
-            <tr>
-                <td>Row 6, Data 1</td>
-                <td>Row 6, Data 2</td>
-                <td>Row 6, Data 3</td>
-            </tr>
-            <tr>
-                <td>Row 7, Data 1</td>
-                <td>Row 7, Data 2</td>
-                <td>Row 7, Data 3</td>
-            </tr>
-            <tr>
-                <td>Row 8, Data 1</td>
-                <td>Row 8, Data 2</td>
-                <td>Row 8, Data 3</td>
+                <td>Staking Rewards</td>
+                <td>Head of Sales and Partnerships</td>
+                <td>Responsible for scaling partnerships and enterprise clients</td>
             </tr>
         </tbody>
     </table>
@@ -245,3 +213,4 @@
 
 </body>
 </html>
+
