@@ -11,7 +11,7 @@
         body, h2, p {
             margin: 0;
             padding: 0;
-            font-family: 'Roboto', roboto; /* Set font to Roboto */
+            font-family: 'Roboto', sans-serif; /* Set font to Roboto */
         }
 
         /* Default Light Mode (Day) */
@@ -20,6 +20,8 @@
             color: #333;
             padding: 20px;
             transition: background-color 0.3s, color 0.3s;
+            max-width: 1200px; /* Limit the max width of the page content */
+            margin: 0 auto;  /* Center the content */
         }
 
         h2 {
@@ -32,11 +34,13 @@
             color: #fff;
         }
 
-        /* Table cells and headers styling */
+        /* Table Styling */
         table {
-            width: 100%;
+            width: 60%; /* Make the table narrower */
+            max-width: 800px; /* Optional: limit max width of the table */
+            margin: 20px auto; /* Center the table horizontally */
             border-collapse: collapse;
-            margin-top: 20px;
+            transition: background-color 0.3s;
         }
 
         td, th {
@@ -58,7 +62,6 @@
             font-size: 20px;
         }
 
-        /* Same background color for table rows */
         tbody tr {
             background-color: #f9f9f9; /* Default for light mode */
         }
@@ -111,6 +114,29 @@
         /* Hover effect */
         .theme-toggle:hover {
             transform: scale(1.2);
+        }
+
+        /* Buttons styling */
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .social-buttons a {
+            display: inline-block;
+            background-color: #007BFF; /* Blue background */
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            border-radius: 30px; /* Rounded corners */
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .social-buttons a:hover {
+            background-color: #0056b3; /* Darker blue on hover */
         }
     </style>
 </head>
@@ -192,6 +218,12 @@
         </tbody>
     </table>
 
+    <!-- Catch Me Here Section -->
+    <div class="social-buttons">
+        <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+        <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+    </div>
+
     <!-- JavaScript to toggle between day and night mode -->
     <script>
         // Get the theme toggle element and the body element
@@ -211,30 +243,5 @@
         });
     </script>
 
-</body>
-    <h2> Catch me here
-
-            <nav class="social-links">
-                <a href="https://github.com/davwals" target="_blank" rel="noopener noreferrer">
-                    <i data-feather="github"></i>
-                </a>
-                <a href="https://twitter.com/0xdavidwalsh" target="_blank" rel="noopener noreferrer">
-                    <i data-feather="twitter"></i>
-                </a>
-                <a href="https://linkedin.com/in/david-w-088340a6/" target="_blank" rel="noopener noreferrer">
-                    <i data-feather="linkedin"></i>
-                </a>
-                <a href="mailto:davidbrendanwalsh@gmail.com">
-                    <i data-feather="mail"></i>
-                </a>
-            </nav>
-        </main>
-
-        <footer>
-            <p>&copy; <span id="current-year"></span> David Walsh. All rights reserved.</p>
-        </footer>
-    </div>
-
-    <script src="script.js"></script>
 </body>
 </html>
