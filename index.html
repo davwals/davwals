@@ -76,6 +76,7 @@
             width: 100%; /* Make the table span the full width */
             border-collapse: collapse;
             margin: 20px 0;
+            background-color: inherit; /* Make table background match page background */
             transition: background-color 0.3s;
         }
 
@@ -86,7 +87,6 @@
         }
 
         th {
-            background-color: #007BFF; /* Header background */
             color: white;
             font-weight: bold;
             font-size: 18px;
@@ -121,6 +121,25 @@
 
         .social-icon img:hover {
             transform: scale(1.1); /* Slight zoom on hover */
+        }
+
+        /* Section with bullet-like lists using '>' */
+        .bullet-list-section {
+            margin-top: 40px;
+        }
+
+        .bullet-list-section h3 {
+            font-size: 22px;
+            margin-bottom: 15px;
+        }
+
+        .bullet-list-section p {
+            margin: 5px 0;
+        }
+
+        .bullet-list-section p::before {
+            content: "> ";
+            font-weight: bold;
         }
     </style>
 </head>
@@ -202,35 +221,28 @@
             </tbody>
         </table>
 
+        <!-- New Section 1: Bullet List -->
+        <div class="bullet-list-section">
+            <h3>Projects Overview</h3>
+            <p> > Alluvial Finance: Focused on institutional liquid staking</p>
+            <p> > Staking Rewards: Leading platform for staking research</p>
+            <p> > Collaboration with major players like Bloomberg</p>
+            <p> > Expansion into new markets</p>
+        </div>
+
+        <!-- New Section 2: Bullet List -->
+        <div class="bullet-list-section">
+            <h3>Key Achievements</h3>
+            <p> > Increased monthly users significantly</p>
+            <p> > Scaled partnerships with top financial institutions</p>
+            <p> > Contributed to research initiatives</p>
+            <p> > Lead a team to drive business success</p>
+        </div>
+
         <!-- Social Buttons -->
         <div class="social-buttons">
             <a href="https://twitter.com/yourusername" target="_blank" class="social-icon">
                 <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
             </a>
             <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/e/e9/Linkedin_icon.svg" alt="LinkedIn Logo">
-            </a>
-        </div>
-    </div>
-
-    <!-- JavaScript to toggle between day and night mode -->
-    <script>
-        // Get the theme toggle element and the body element
-        const themeToggle = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        // Function to toggle between day and night mode
-        themeToggle.addEventListener('click', function() {
-            body.classList.toggle('night-mode');
-            
-            // Switch the emoji based on the theme
-            if (body.classList.contains('night-mode')) {
-                themeToggle.textContent = '🌞';  // Sun emoji for night mode
-            } else {
-                themeToggle.textContent = '🌙';  // Moon emoji for day mode
-            }
-        });
-    </script>
-
-</body>
-</html>
+                <img src="https
