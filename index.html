@@ -17,10 +17,10 @@
         body {
             background-color: #D3D3D3;
             color: #333;
-            padding: 20px;
+            padding: 40px; /* Add thicker padding around the entire content */
             transition: background-color 0.3s, color 0.3s;
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto; /* Center the page */
         }
 
         h2 {
@@ -39,14 +39,13 @@
             border-collapse: collapse;
             margin: 20px auto;
             background-color: inherit; /* Ensure background matches the body */
-            opacity: 0.85; /* Transparency effect */
         }
 
         td, th {
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
-            background-color: inherit; /* Transparent background for cells */
+            background-color: inherit; /* Ensure cell background is consistent */
             transition: background-color 0.3s, color 0.3s;
         }
 
@@ -57,17 +56,17 @@
         }
 
         tbody tr {
-            background-color: inherit; /* Ensuring rows match the body background */
+            background-color: inherit; /* Ensure rows use the same background as the page */
         }
 
         /* Dark Mode Table Styling */
         body.night-mode tbody tr {
-            background-color: #2e2e2e; /* Dark background for night mode rows */
+            background-color: #333; /* Dark background for night mode */
         }
 
         body.night-mode td, body.night-mode th {
-            background-color: #2e2e2e; 
-            color: #ccc; /* Light text in dark table for readability */
+            background-color: #444; 
+            color: #ccc; /* Light text in the dark table for readability */
         }
 
         /* Profile Picture Container */
@@ -76,7 +75,8 @@
             align-items: center;
             justify-content: flex-start;
             margin-bottom: 20px;
-            width: 75%; /* Ensuring 75% width */
+            width: 75%; /* Ensure the profile section stays at 75% width */
+            margin: 0 auto; /* Center the profile section */
         }
 
         .profile-container img {
@@ -90,7 +90,8 @@
         /* About Section */
         .about-section {
             margin-bottom: 30px;
-            width: 75%; /* Ensuring 75% width */
+            width: 75%; /* Ensure the about section stays at 75% width */
+            margin: 0 auto; /* Center the about section */
         }
 
         .about-section p {
@@ -123,6 +124,8 @@
         .social-links {
             text-align: center;
             margin-top: 40px;
+            width: 75%; /* Ensure the social links stay at 75% width */
+            margin: 0 auto; /* Center the social links */
         }
 
         .social-links a {
@@ -143,10 +146,8 @@
             table {
                 width: 90%;
             }
-
-            .profile-container,
-            .about-section {
-                width: 90%; /* Ensuring responsiveness */
+            .profile-container, .about-section, .social-links {
+                width: 90%; /* Adjust for mobile view */
             }
         }
     </style>
@@ -158,7 +159,8 @@
 
     <!-- Profile Picture Section -->
     <div class="profile-container">
-        <img src="https://i.imgur.com/CRgas4v.jpeg" alt="Profile Picture">
+       <img src="https://i.imgur.com/CRgas4v.jpeg" alt="Profile Picture">
+
         <div>
             <h2>David Walsh</h2>
             <p>Head of Sales.</p>
@@ -186,44 +188,44 @@
         </thead>
         <tbody>
             <tr>
-                <td>> Alluvial Finance / Liquid Collective</td>
-                <td>> Head of Sales</td>
-                <td>> Lead Sales and BD at the Institutional LST</td>
+                <td>Alluvial Finance / Liquid Collective</td>
+                <td>Head of Sales</td>
+                <td>Lead Sales and BD at the Institutional LST</td>
             </tr>
             <tr>
-                <td>> Staking Rewards</td>
-                <td>> Head of Sales and Partnerships</td>
-                <td>> blah</td>
+                <td>Staking Rewards</td>
+                <td>Head of Sales and Partnerships</td>
+                <td>blah</td>
             </tr>
             <tr>
-                <td>> Row 3, Data 1</td>
-                <td>> Row 3, Data 2</td>
-                <td>> Row 3, Data 3</td>
+                <td>Row 3, Data 1</td>
+                <td>Row 3, Data 2</td>
+                <td>Row 3, Data 3</td>
             </tr>
             <tr>
-                <td>> Row 4, Data 1</td>
-                <td>> Row 4, Data 2</td>
-                <td>> Row 4, Data 3</td>
+                <td>Row 4, Data 1</td>
+                <td>Row 4, Data 2</td>
+                <td>Row 4, Data 3</td>
             </tr>
             <tr>
-                <td>> Row 5, Data 1</td>
-                <td>> Row 5, Data 2</td>
-                <td>> Row 5, Data 3</td>
+                <td>Row 5, Data 1</td>
+                <td>Row 5, Data 2</td>
+                <td>Row 5, Data 3</td>
             </tr>
             <tr>
-                <td>> Row 6, Data 1</td>
-                <td>> Row 6, Data 2</td>
-                <td>> Row 6, Data 3</td>
+                <td>Row 6, Data 1</td>
+                <td>Row 6, Data 2</td>
+                <td>Row 6, Data 3</td>
             </tr>
             <tr>
-                <td>> Row 7, Data 1</td>
-                <td>> Row 7, Data 2</td>
-                <td>> Row 7, Data 3</td>
+                <td>Row 7, Data 1</td>
+                <td>Row 7, Data 2</td>
+                <td>Row 7, Data 3</td>
             </tr>
             <tr>
-                <td>> Row 8, Data 1</td>
-                <td>> Row 8, Data 2</td>
-                <td>> Row 8, Data 3</td>
+                <td>Row 8, Data 1</td>
+                <td>Row 8, Data 2</td>
+                <td>Row 8, Data 3</td>
             </tr>
         </tbody>
     </table>
@@ -231,17 +233,17 @@
     <!-- Bullet List Section 1 -->
     <div class="bullet-list-section">
         <h3>Key Projects</h3>
-        <p>> Collaboration with major players like Bloomberg</p>
-        <p>> Expansion into new markets</p>
+        <p> > Collaboration with major players like Bloomberg</p>
+        <p> > Expansion into new markets</p>
     </div>
 
     <!-- Bullet List Section 2 -->
     <div class="bullet-list-section">
         <h3>Key Achievements</h3>
-        <p>> Increased monthly users significantly</p>
-        <p>> Scaled partnerships with top financial institutions</p>
-        <p>> Contributed to research initiatives</p>
-        <p>> Lead a team to drive business success</p>
+        <p> > Increased monthly users significantly</p>
+        <p> > Scaled partnerships with top financial institutions</p>
+        <p> > Contributed to research initiatives</p>
+        <p> > Lead a team to drive business success</p>
     </div>
 
     <!-- Social Links Section -->
@@ -257,19 +259,15 @@
         const body = document.body;
 
         // Function to toggle between day and night mode
-        themeToggle.addEventListener('click', function() {
+        themeToggle.addEventListener('click', () => {
             body.classList.toggle('night-mode');
-            
-            // Change the emoji based on the mode
-            if (body.classList.contains('night-mode')) {
-                themeToggle.textContent = '🌞'; // Sun emoji for night mode
-            } else {
-                themeToggle.textContent = '🌙'; // Moon emoji for day mode
-            }
+            // Update the toggle icon
+            themeToggle.textContent = body.classList.contains('night-mode') ? '🌞' : '🌙';
         });
     </script>
 
 </body>
 </html>
+
 
 
