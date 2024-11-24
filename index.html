@@ -38,30 +38,30 @@
             width: 100%;
             border-collapse: collapse;
             margin: 20px auto;
-            transition: background-color 0.3s;
+            background-color: inherit; /* Ensure background matches the body */
         }
 
         td, th {
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
-            transition: background-color 0.3s;
+            background-color: inherit; /* Ensure cell background is consistent */
+            transition: background-color 0.3s, color 0.3s;
         }
 
         th {
-            background-color: #007BFF;
-            color: white;
+            color: inherit; /* Ensuring header text color matches the body */
             font-weight: bold;
             font-size: 18px;
         }
 
         tbody tr {
-            background-color: #f9f9f9;
+            background-color: inherit; /* Ensure rows use the same background as the page */
         }
 
         /* Dark Mode Table Styling */
         body.night-mode tbody tr {
-            background-color: #333;
+            background-color: #333; /* Dark background for night mode */
         }
 
         body.night-mode td, body.night-mode th {
@@ -110,23 +110,29 @@
             transform: scale(1.2);
         }
 
+        /* Bullet List Styling */
+        .bullet-list-section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
         /* Social Links Section */
+        .social-links {
+            text-align: center;
+            margin-top: 40px;
+        }
+
         .social-links a {
             font-size: 16px;
-            color: inherit; /* Use the same color as the text */
+            color: inherit;
             text-decoration: none;
             padding: 10px 15px;
+            margin: 0 10px; /* Space between the links */
             transition: color 0.3s;
         }
 
         .social-links a:hover {
             color: #007BFF; /* Highlight on hover */
-        }
-
-        /* Bullet List Styling */
-        .bullet-list-section p {
-            font-size: 16px;
-            line-height: 1.5;
         }
 
         /* Responsive Design */
@@ -144,7 +150,6 @@
 
     <!-- Profile Picture Section -->
     <div class="profile-container">
-        <!-- Replace the src with your actual profile picture -->
         <img src="https://via.placeholder.com/100" alt="Profile Picture">
         <div>
             <h2>David Walsh</h2>
@@ -173,14 +178,14 @@
         </thead>
         <tbody>
             <tr>
-                <td> Alluvial Finance / Liquid Collective</td>
-                <td> Head of Sales</td>
-                <td> Lead Sales and BD at the Institutional LST </td>
+                <td>Alluvial Finance / Liquid Collective</td>
+                <td>Head of Sales</td>
+                <td>Lead Sales and BD at the Institutional LST</td>
             </tr>
             <tr>
-                <td>Staking Rewards </td>
-                <td> Head of Sales and Partnerships </td>
-                <td> blah </td>
+                <td>Staking Rewards</td>
+                <td>Head of Sales and Partnerships</td>
+                <td>blah</td>
             </tr>
             <tr>
                 <td>Row 3, Data 1</td>
