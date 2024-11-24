@@ -4,12 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table with Profile Picture and Theme Toggle</title>
+    <!-- Link to Google Fonts for Roboto -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
         /* Basic Reset */
         body, h2, p {
             margin: 0;
             padding: 0;
-            font-family: 'Helvetica', Arial, sans-serif; /* Set font to Helvetica */
+            font-family: 'Roboto', sans-serif; /* Set font to Roboto */
         }
 
         /* Default Light Mode (Day) */
@@ -28,6 +30,46 @@
         body.night-mode {
             background-color: #2e2e2e;
             color: #fff;
+        }
+
+        /* Table cells and headers styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        td, th {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            transition: background-color 0.3s;
+        }
+
+        th {
+            background-color: #007BFF; /* Blue for header row */
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        tr:first-child th {
+            font-family: 'Courier New', Courier, monospace;
+            font-size: 20px;
+        }
+
+        /* Same background color for table rows */
+        tbody tr {
+            background-color: #f9f9f9; /* Default for light mode */
+        }
+
+        /* Dark Mode Table Styling */
+        body.night-mode tbody tr {
+            background-color: #333; /* Dark background for night mode */
+        }
+
+        body.night-mode td, body.night-mode th {
+            background-color: #444; /* Darker table cells for night mode */
         }
 
         /* Profile picture container */
@@ -54,35 +96,6 @@
         .about-section p {
             font-size: 16px;
             line-height: 1.5;
-        }
-
-        /* Table styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-        }
-
-        /* Same background color for all table cells */
-        td, th {
-            padding: 10px;
-            text-align: left;
-            background-color: #f9f9f9; /* Light gray for day mode */
-            border: 1px solid #ddd;
-        }
-
-        th {
-            background-color: #007BFF; /* Blue for header row */
-            color: white;
-            font-family: 'Helvetica', Arial, sans-serif;
-            font-weight: bold;
-            font-size: 18px;
-        }
-
-        /* Cold font style for the first row */
-        tr:first-child th {
-            font-family: 'Courier New', Courier, monospace;
-            font-size: 20px;
         }
 
         /* Sun/Moon Toggle Styling */
@@ -199,8 +212,6 @@
     </script>
 
 </body>
-</html>
-
     <h2> Catch me here
 
             <nav class="social-links">
