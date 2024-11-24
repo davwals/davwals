@@ -1,52 +1,135 @@
-/* Wrapper for all content */
-.wrapper {
-    width: 75%; /* Content width set to 75% of the viewport */
-    margin: 0 auto; /* Center horizontally */
-    padding: 20px; /* Add padding for internal spacing */
-    background-color: inherit; /* Matches the current background theme */
-    box-sizing: border-box; /* Include padding in width calculation */
-}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Table with Profile Picture and Theme Toggle</title>
+    <!-- Link to Google Fonts for Menlo -->
+    <link href="https://fonts.googleapis.com/css2?family=Menlo:wght@400&display=swap" rel="stylesheet">
+    <style>
+        /* Reset the body and text styles */
+        body, h2, p {
+            margin: 0;
+            padding: 0;
+            font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+            background-color: #D3D3D3;
+            color: #333;
+            transition: background-color 0.3s, color 0.3s;
+        }
 
-/* Reset body margins */
-body {
-    margin: 0;
-    padding: 0;
-    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
-    background-color: #D3D3D3;
-    color: #333;
-}
+        /* Body and content container */
+        .wrapper {
+            width: 75%; /* Set content width to 75% of the viewport */
+            margin: 0 auto; /* Center horizontally */
+            padding: 20px; /* Add padding */
+            background-color: inherit; /* Match background color */
+            box-sizing: border-box; /* Include padding in width calculation */
+        }
 
-/* Table adjustments for proper alignment */
-table {
-    width: 100%; /* Make the table span the full width of the wrapper */
-    border-collapse: collapse;
-    margin: 20px 0; /* Add spacing above and below the table */
-}
+        /* Dark Mode (Night) */
+        body.night-mode {
+            background-color: #2e2e2e;
+            color: #fff;
+        }
 
-/* Social buttons */
-.social-buttons {
-    display: flex;
-    gap: 20px;
-    justify-content: center;
-    margin-top: 40px;
-}
+        /* Theme toggle button */
+        .theme-toggle {
+            font-size: 30px;
+            cursor: pointer;
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            transition: transform 0.3s;
+        }
 
-.social-icon img {
-    width: 40px; /* Adjust logo size */
-    height: 40px;
-    transition: transform 0.3s ease;
-}
+        .theme-toggle:hover {
+            transform: scale(1.2);
+        }
 
-.social-icon img:hover {
-    transform: scale(1.1); /* Slight zoom on hover */
-}
+        /* Profile Picture */
+        .profile-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+            margin-bottom: 20px;
+        }
 
+        .profile-container img {
+            border-radius: 50%;
+            width: 100px;
+            height: 100px;
+            border: 2px solid #ddd;
+            margin-right: 20px;
+        }
 
+        .about-section {
+            margin-bottom: 30px;
+        }
+
+        .about-section p {
+            font-size: 16px;
+            line-height: 1.5;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%; /* Make the table span the full width */
+            border-collapse: collapse;
+            margin: 20px 0;
+            transition: background-color 0.3s;
+        }
+
+        td, th {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #007BFF; /* Header background */
+            color: white;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        tbody tr {
+            background-color: #f9f9f9; /* Default for light mode */
+        }
+
+        /* Dark Mode Table Styling */
+        body.night-mode tbody tr {
+            background-color: #333; /* Dark background for night mode */
+        }
+
+        body.night-mode td, body.night-mode th {
+            background-color: #444; /* Darker table cells for night mode */
+        }
+
+        /* Social Buttons */
+        .social-buttons {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            margin-top: 40px;
+        }
+
+        .social-icon img {
+            width: 40px; /* Set icon size */
+            height: 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .social-icon img:hover {
+            transform: scale(1.1); /* Slight zoom on hover */
+        }
+    </style>
+</head>
 <body>
-    <!-- Theme Toggle Button -->
+
+    <!-- Theme Toggle Button (Sun/Moon Emoji) -->
     <span class="theme-toggle" id="theme-toggle">🌙</span>
 
-    <!-- Wrapper starts here -->
+    <!-- Wrapper for all content -->
     <div class="wrapper">
         <!-- Profile Picture Section -->
         <div class="profile-container">
@@ -61,7 +144,7 @@ table {
         <div class="about-section">
             <h2>About Me</h2>
             <p>
-                David Walsh is Alluvial's Sales Lead and has been involved in the staking industry for more than 3 years...
+                David Walsh is Alluvial's Sales Lead and has been involved in the staking industry for more than 3 years. Before Alluvial, David was the Head of Business at Staking Rewards - the industry’s leading data & research platform. David played a key role in growing the Staking Rewards business to hundreds of thousands of monthly users while simultaneously growing the client base to ~150+ enterprise customers including Bloomberg, TradingView, and Coinbase. Before Staking Rewards, David was a Senior Consultant at EY working in the Financial Services space. In 2018, David graduated with an MSc in Management from UCD. He also holds a BA in Economics from UCC.
             </p>
         </div>
 
@@ -86,6 +169,36 @@ table {
                     <td>Head of Sales and Partnerships</td>
                     <td>Responsible for scaling partnerships and enterprise clients</td>
                 </tr>
+                <tr>
+                    <td>Row 3, Data 1</td>
+                    <td>Row 3, Data 2</td>
+                    <td>Row 3, Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 4, Data 1</td>
+                    <td>Row 4, Data 2</td>
+                    <td>Row 4, Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 5, Data 1</td>
+                    <td>Row 5, Data 2</td>
+                    <td>Row 5, Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 6, Data 1</td>
+                    <td>Row 6, Data 2</td>
+                    <td>Row 6, Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 7, Data 1</td>
+                    <td>Row 7, Data 2</td>
+                    <td>Row 7, Data 3</td>
+                </tr>
+                <tr>
+                    <td>Row 8, Data 1</td>
+                    <td>Row 8, Data 2</td>
+                    <td>Row 8, Data 3</td>
+                </tr>
             </tbody>
         </table>
 
@@ -99,5 +212,25 @@ table {
             </a>
         </div>
     </div>
-    <!-- Wrapper ends here -->
+
+    <!-- JavaScript to toggle between day and night mode -->
+    <script>
+        // Get the theme toggle element and the body element
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
+
+        // Function to toggle between day and night mode
+        themeToggle.addEventListener('click', function() {
+            body.classList.toggle('night-mode');
+            
+            // Switch the emoji based on the theme
+            if (body.classList.contains('night-mode')) {
+                themeToggle.textContent = '🌞';  // Sun emoji for night mode
+            } else {
+                themeToggle.textContent = '🌙';  // Moon emoji for day mode
+            }
+        });
+    </script>
+
 </body>
+</html>
