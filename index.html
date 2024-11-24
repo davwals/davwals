@@ -1,3 +1,47 @@
+/* Wrapper for all content */
+.wrapper {
+    width: 75%; /* Content width set to 75% of the viewport */
+    margin: 0 auto; /* Center horizontally */
+    padding: 20px; /* Add padding for internal spacing */
+    background-color: inherit; /* Matches the current background theme */
+    box-sizing: border-box; /* Include padding in width calculation */
+}
+
+/* Reset body margins */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Menlo", "Monaco", "Consolas", "Courier New", monospace;
+    background-color: #D3D3D3;
+    color: #333;
+}
+
+/* Table adjustments for proper alignment */
+table {
+    width: 100%; /* Make the table span the full width of the wrapper */
+    border-collapse: collapse;
+    margin: 20px 0; /* Add spacing above and below the table */
+}
+
+/* Social buttons */
+.social-buttons {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    margin-top: 40px;
+}
+
+.social-icon img {
+    width: 40px; /* Adjust logo size */
+    height: 40px;
+    transition: transform 0.3s ease;
+}
+
+.social-icon img:hover {
+    transform: scale(1.1); /* Slight zoom on hover */
+}
+
+
 <body>
     <!-- Theme Toggle Button -->
     <span class="theme-toggle" id="theme-toggle">🌙</span>
