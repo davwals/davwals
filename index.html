@@ -19,7 +19,8 @@
 
         /* Body and content container */
         .wrapper {
-            width: 75%; /* Set content width to 75% of the viewport */
+            width: 90%; /* Adjusted for better mobile readability */
+            max-width: 1200px; /* Set max-width for large screens */
             margin: 0 auto; /* Center horizontally */
             padding: 20px; /* Add padding */
             background-color: inherit; /* Match background color */
@@ -84,10 +85,11 @@
             padding: 10px;
             text-align: left;
             border: 1px solid #ddd;
+            color: inherit; /* Ensure text color is inherited from body */
         }
 
         th {
-            color: white;
+            color: inherit; /* Ensure table header text color is consistent */
             font-weight: bold;
             font-size: 18px;
             background-color: inherit; /* Remove blue background */
@@ -106,22 +108,21 @@
             background-color: #555; /* Darker table cells in night mode */
         }
 
-        /* Social Buttons */
-        .social-buttons {
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            margin-top: 40px;
+        /* Social Links Styling */
+        .social-links {
+            margin-top: 20px;
+            text-align: center;
         }
 
-        .social-icon img {
-            width: 40px; /* Set icon size */
-            height: 40px;
-            transition: transform 0.3s ease;
+        .social-links a {
+            color: inherit; /* Link color matches body text color */
+            text-decoration: none;
+            font-size: 18px;
+            margin: 0 10px;
         }
 
-        .social-icon img:hover {
-            transform: scale(1.1); /* Slight zoom on hover */
+        .social-links a:hover {
+            text-decoration: underline;
         }
 
         /* Section with bullet-like lists using '>' */
@@ -141,6 +142,36 @@
         .bullet-list-section p::before {
             content: "> ";
             font-weight: bold;
+        }
+
+        /* Responsive Adjustments for Tables */
+        @media (max-width: 768px) {
+            table, thead, tbody, th, td, tr {
+                display: block; /* Stack table rows on mobile */
+            }
+
+            th, td {
+                width: 100%; /* Make cells take full width */
+                box-sizing: border-box; /* Ensure padding does not affect width */
+            }
+
+            th {
+                background-color: inherit; /* Keep header background matching body */
+                position: relative; /* Make headers take up full width */
+            }
+
+            td {
+                text-align: left;
+                padding-left: 50%; /* Indent content for better visibility */
+                position: relative;
+            }
+
+            td::before {
+                content: attr(data-label); /* Add a label to each cell */
+                position: absolute;
+                left: 10px;
+                font-weight: bold;
+            }
         }
     </style>
 </head>
@@ -227,7 +258,7 @@
             <h3>Projects Overview</h3>
             <p> > Alluvial Finance: Focused on institutional liquid staking</p>
             <p> > Staking Rewards: Leading platform for staking research</p>
-            <p> > Collaboration with major players like Bloomberg</p>
+                        <p> > Collaboration with major players like Bloomberg</p>
             <p> > Expansion into new markets</p>
         </div>
 
@@ -240,10 +271,30 @@
             <p> > Lead a team to drive business success</p>
         </div>
 
-        <!-- Social Buttons -->
-        <div class="social-buttons">
-            <a href="https://twitter.com/yourusername" target="_blank" class="social-icon">
-                <img src="https://upload.wikimedia.org/wikipedia/en/6/60/Twitter_Logo_as_of_2021.svg" alt="Twitter Logo">
-            </a>
-            <a href="https://linkedin.com/in/yourusername" target="_blank" class="social-icon">
-                <img src="https://upload.wik
+        <!-- Social Links Section -->
+        <div class="social-links">
+            <a href="https://twitter.com/yourusername" target="_blank">Twitter</a>
+            <a href="https://linkedin.com/in/yourusername" target="_blank">LinkedIn</a>
+        </div>
+
+    </div>
+
+    <script>
+        // Theme toggle functionality
+        const themeToggleButton = document.getElementById('theme-toggle');
+        themeToggleButton.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            if (document.body.classList.contains('night-mode')) {
+                themeToggleButton.textContent = '🌞'; // Change to sun emoji for night mode
+            } else {
+                themeToggleButton.textContent = '🌙'; // Change to moon emoji for day mode
+            }
+        });
+    </script>
+
+</body>
+</html>
+
+           
+
+            
