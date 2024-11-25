@@ -21,6 +21,11 @@
             transition: background-color 0.3s, color 0.3s;
         }
 
+        /* Section Styling */
+        .section {
+            margin-bottom: 40px; /* Consistent spacing between sections */
+        }
+
         /* Heading and Paragraph Styling */
         h2 {
             font-size: 24px;
@@ -38,11 +43,6 @@
             margin-bottom: 15px;
         }
 
-        /* Section Spacing */
-        .section {
-            margin-bottom: 40px; /* Consistent bottom spacing for all sections */
-        }
-
         /* Dark Mode (Night) */
         body.night-mode {
             background-color: #2e2e2e;
@@ -53,7 +53,7 @@
         table {
             width: 100%;
             border-collapse: collapse;
-            margin-top: 15px; /* Consistent spacing above the table */
+            margin-top: 15px;
         }
 
         th, td {
@@ -66,6 +66,14 @@
         th {
             font-weight: bold;
             font-size: 18px;
+        }
+
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        body.night-mode tbody tr:nth-child(even) {
+            background-color: #444;
         }
 
         /* Profile Section */
@@ -191,12 +199,30 @@
                 <tr>
                     <td>Staking Rewards</td>
                     <td>Head of Sales and Partnerships</td>
-                    <td>Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business.</td>
+                    <td>
+                        Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business. 
+                        Helped scale the company’s brand/reputation and build 5+ revenue streams within my first 12 months.
+                    </td>
                 </tr>
                 <tr>
                     <td>EY</td>
                     <td>Senior Consultant</td>
                     <td>Consultant things like Excel, PPT, maximizing shareholder value, etc.</td>
+                </tr>
+                <tr>
+                    <td>Tempest Finance</td>
+                    <td>Advisor</td>
+                    <td>Quantitative Research Firm building Decentralized Liquidity Management on Ambient Finance.</td>
+                </tr>
+                <tr>
+                    <td>Printr</td>
+                    <td>Angel</td>
+                    <td>Instantly print memes to 69+ chains @ printr.money.</td>
+                </tr>
+                <tr>
+                    <td>Nektar Network</td>
+                    <td>Angel</td>
+                    <td>Decentralized Infrastructure Marketplace.</td>
                 </tr>
             </tbody>
         </table>
@@ -242,6 +268,7 @@
     </script>
 </body>
 </html>
+
 
 
 
