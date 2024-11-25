@@ -23,7 +23,7 @@
 
         /* Section Styling */
         .section {
-            margin-bottom: 40px; /* Consistent spacing between sections */
+            margin-bottom: 40px;
         }
 
         /* Heading and Paragraph Styling */
@@ -50,96 +50,89 @@
         }
 
         /* Table Styling */
-        .projects-table {
+        table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
-            background-color: inherit;
         }
 
-        .projects-table th, .projects-table td {
-            padding: 15px 20px;
+        th, td {
+            padding: 10px;
             text-align: left;
+            border: 1px solid #ddd;
             font-size: 16px;
-            border-bottom: 1px solid #555; /* Separator line */
         }
 
-        .projects-table th {
-            background-color: #333;
-            color: #fff;
+        th {
             font-weight: bold;
+            font-size: 18px;
         }
 
-        .projects-table tr:hover {
-            background-color: #eee;
+        tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
         }
 
-        .projects-table a {
-            text-decoration: none;
-            font-weight: bold; /* Bold for project links */
-            color: inherit;
-            transition: color 0.3s;
+        body.night-mode tbody tr:nth-child(even) {
+            background-color: #444;
         }
 
-        .projects-table a:hover {
-            color: #007BFF; /* Highlight on hover */
-        }
-
-        /* Profile Section */
-        .profile-container {
-            display: flex;
-            align-items: center;
-            margin-bottom: 40px;
-        }
-
-        .profile-container img {
-            border-radius: 50%;
-            width: 100px;
-            height: 100px;
-            border: 2px solid #ddd;
-            margin-right: 20px;
-        }
-
-        /* About Section */
-        .about-section p {
+        /* Flashing Button Styling */
+        .flashing-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            background-color: #FF6347;
+            border: none;
+            color: white;
+            cursor: pointer;
+            animation: flashing 1s infinite;
+            margin-top: 20px;
             margin-bottom: 20px;
         }
 
-        /* Bullet List Styling */
-        .bullet-list p {
-            margin-bottom: 10px; /* Consistent spacing for bullet points */
+        @keyframes flashing {
+            0% { background-color: #FF6347; }
+            50% { background-color: #FF4500; }
+            100% { background-color: #FF6347; }
         }
 
-        /* Sun/Moon Toggle Styling */
-        .theme-toggle {
-            font-size: 30px;
-            cursor: pointer;
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            transition: transform 0.3s;
-        }
-
-        .theme-toggle:hover {
-            transform: scale(1.2);
-        }
-
-        /* Social Links Section */
-        .social-links {
-            text-align: center;
+        /* Location Section */
+        .location-section {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
             margin-top: 40px;
+            margin-bottom: 40px;
         }
 
-        .social-links a {
-            font-size: 16px;
-            text-decoration: none;
-            color: inherit;
-            padding: 10px 15px;
-            transition: color 0.3s;
+        /* Google Maps Embed */
+        .map-container {
+            width: 100%;
+            max-width: 800px;
+            height: 400px;
+            margin-bottom: 20px;
+            border-radius: 10px;
+            overflow: hidden;
         }
 
-        .social-links a:hover {
-            color: #007BFF;
+        iframe {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* Image Grid Section */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 15px;
+            margin-top: 20px;
+            width: 100%;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
         }
 
         /* Responsive Design */
@@ -148,7 +141,7 @@
                 padding: 20px 10%;
             }
 
-            .profile-container, .about-section, .social-links {
+            .profile-container, .about-section, .social-links, .location-section {
                 width: 100%;
             }
         }
@@ -170,92 +163,35 @@
     <!-- About Me Section -->
     <div class="about-section section">
         <h2>About Me</h2>
-        <p>👋 gm gm - I am David Walsh (@davwals) </p>
-        <p>I have been working in the staking industry for 4+ years.</p>
-        <p>Currently, I lead sales and bd at Alluvial where we work on the Liquid Collective protocol (LsETH) and on Alluvial's Stake Management System (SMS).</p>
-        <p>
-            Before Alluvial, I led the business teams at Staking Rewards - the staking industry’s leading data & research platform.
-            At Staking Rewards, I was key in helping to grow the userbase to hundreds of thousands of monthly users while 
-            simultaneously growing our client base to ~150+ enterprise customers including Bloomberg, Grayscale, Kraken, Coinbase and quite a few others.
-        </p>
-        <p>
-            In a past life, I was a Senior Consultant at EY for a few years, working in banks and other FIs across the UK and Ireland.
-        </p>
-        <p>
-            I graduated with an MSc in Management from University College Dublin (Michael Smurfit Graduate Business School). 
-            I also hold a BA in Economics from University College Cork (where I first learnt about crypto).
-        </p>
+        <p>👋 gm - I am David Walsh</p>
+        <p>I have been involved in the staking industry for more than 4 years.</p>
+        <p>Right now, I am Alluvial's Sales Lead working on growing the Liquid Collective protocol (LsETH).</p>
     </div>
 
-    <!-- My Experience Section -->
-    <div class="section">
-        <h2>My Experience</h2>
-        <table class="projects-table">
-            <thead>
-                <tr>
-                    <th>Project</th>
-                    <th>Role</th>
-                    <th>Description</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><a href="https://alluvial.finance" target="_blank">> Alluvial Finance</a></td>
-                    <td>Head of Sales</td>
-                    <td>Leading Sales and BD at Liquid Collective, the institutional-focused LST on Ethereum.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.stakingrewards.com/" target="_blank">> Staking Rewards</a></td>
-                    <td>Head of Sales and Partnerships</td>
-                    <td>
-                        Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business. 
-                        Helped scale the company’s brand/reputation and build 5+ revenue streams within my first 12 months.
-                    </td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.ey.com/" target="_blank">> EY</a></td>
-                    <td>Senior Consultant</td>
-                    <td>Consultant things like Excel, PPT, maximizing shareholder value, etc.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.tempestfinance.xyz/" target="_blank">> Tempest Finance</a></td>
-                    <td>Advisor</td>
-                    <td>Quantitative Research Firm building Decentralized Liquidity Management on Ambient Finance.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://printr.money/" target="_blank">> Printr</a></td>
-                    <td>Angel</td>
-                    <td>Instantly print memes to 69+ chains @ printr.money.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://www.nektar.network/" target="_blank">> Nektar Network</a></td>
-                    <td>Angel</td>
-                    <td>Decentralized Infrastructure Marketplace.</td>
-                </tr>
-            </tbody>
-        </table>
-    </div>
+    <!-- Location Section -->
+    <div class="location-section section">
+        <h2>Where I'm From 🌍</h2>
+        
+        <!-- Google Maps Embed -->
+        <div class="map-container">
+            <iframe
+                src="https://www.google.com/maps/embed/v1/place?key=YOUR_GOOGLE_MAPS_API_KEY&q=Lisbon,Portugal"
+                allowfullscreen>
+            </iframe>
+        </div>
 
-    <!-- Key Interests Section -->
-    <div class="bullet-list section">
-        <h3>Key Interests</h3>
-        <p> > Sustainable building in crypto</p>
-        <p> > Ecosystem-Growth</p>
-        <p> > Partnerships</p>
-        <p> > Ethereum</p>
-        <p> > Staking</p>
-        <p> > Solana</p>
-        <p> > Sales</p>
-        <p> > BD</p>
-    </div>
+        <!-- Current Location Button -->
+        <button class="flashing-button" onclick="getCurrentLocation()">Current Location</button>
 
-    <!-- Reach Out Section -->
-    <div class="bullet-list section">
-        <h3>Reach out to me if you want to...</h3>
-        <p> > discuss LsETH and the advantages vs other LSTs.</p>
-        <p> > discuss angel investment opportunities.</p>
-        <p> > discuss advisory opportunities.</p>
-        <p> > discuss collaboration ideas.</p>
+        <!-- Image Grid -->
+        <div class="image-grid">
+            <img src="https://via.placeholder.com/300x200" alt="Image 1">
+            <img src="https://via.placeholder.com/300x200" alt="Image 2">
+            <img src="https://via.placeholder.com/300x200" alt="Image 3">
+            <img src="https://via.placeholder.com/300x200" alt="Image 4">
+            <img src="https://via.placeholder.com/300x200" alt="Image 5">
+            <img src="https://via.placeholder.com/300x200" alt="Image 6">
+        </div>
     </div>
 
     <!-- Social Links Section -->
@@ -264,7 +200,7 @@
         <a href="https://www.linkedin.com/in/david-w-088340a6/" target="_blank">LinkedIn</a>
     </div>
 
-    <!-- JavaScript for Theme Toggle -->
+    <!-- JavaScript for Theme Toggle and Location Button -->
     <script>
         const themeToggle = document.getElementById('theme-toggle');
         const body = document.body;
@@ -273,9 +209,20 @@
             body.classList.toggle('night-mode');
             themeToggle.textContent = body.classList.contains('night-mode') ? '🌞' : '🌙';
         });
+
+        function getCurrentLocation() {
+            if (navigator.geolocation) {
+                navigator.geolocation.getCurrentPosition(function(position) {
+                    alert("Latitude: " + position.coords.latitude + "\nLongitude: " + position.coords.longitude);
+                });
+            } else {
+                alert("Geolocation is not supported by this browser.");
+            }
+        }
     </script>
 </body>
 </html>
+
 
 
 
