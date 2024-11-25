@@ -7,7 +7,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Menlo&display=swap" rel="stylesheet">
     <style>
         /* Basic Reset */
-        body, h2, p {
+        body, h2, h3, p {
             margin: 0;
             padding: 0;
             font-family: 'Menlo', monospace; /* Set font to Menlo */
@@ -17,18 +17,52 @@
         body {
             background-color: #FAFAFA;
             color: #333;
-            padding: 40px 15%; /* Add thicker padding around the entire content with 15% margin */
+            padding: 40px 15%; /* Add thicker padding around the entire content */
             transition: background-color 0.3s, color 0.3s;
         }
 
+        /* Headings and Paragraphs */
         h2 {
             margin-bottom: 20px;
+            font-size: 24px; /* Uniform heading size */
+        }
+
+        h3 {
+            margin-bottom: 15px;
+            font-size: 20px;
+        }
+
+        p {
+            font-size: 16px; /* Uniform paragraph size */
+            line-height: 1.5;
         }
 
         /* Dark Mode (Night) */
         body.night-mode {
             background-color: #2e2e2e;
-            color: #ccc; /* Lighter color for text in dark mode */
+            color: #ccc;
+        }
+
+        /* Table Styling */
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background-color: inherit;
+        }
+
+        td, th {
+            padding: 10px;
+            text-align: left;
+            border: 1px solid #ddd;
+            background-color: inherit;
+            transition: background-color 0.3s, color 0.3s;
+            font-size: 16px; /* Consistent table font size */
+        }
+
+        th {
+            font-weight: bold;
+            font-size: 18px; /* Slightly larger headers for emphasis */
         }
 
         /* Profile Picture Container */
@@ -51,35 +85,26 @@
         /* About Section */
         .about-section {
             margin-bottom: 30px;
-            width: 100%; /* Ensuring the section takes full width */
+            width: 100%;
         }
 
         .about-section p {
-            font-size: 16px;
-            line-height: 1.5;
-            margin-bottom: 20px; /* Adds space between paragraphs */
+            margin-bottom: 20px;
         }
 
-        /* Table Styling */
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: inherit;
+        /* Sun/Moon Toggle Styling */
+        .theme-toggle {
+            font-size: 30px;
+            cursor: pointer;
+            position: fixed; /* Always stays in the corner */
+            top: 20px;
+            right: 20px; /* Adjusted to the right corner */
+            transition: transform 0.3s;
         }
 
-        td, th {
-            padding: 10px;
-            text-align: left;
-            border: 1px solid #ddd;
-            background-color: inherit;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        th {
-            color: inherit;
-            font-weight: bold;
-            font-size: 18px;
+        /* Hover effect */
+        .theme-toggle:hover {
+            transform: scale(1.2);
         }
 
         /* Social Links Section */
@@ -107,9 +132,11 @@
             body {
                 padding: 20px 10%;
             }
+
             table {
                 width: 90%;
             }
+
             .profile-container, .about-section, .social-links {
                 width: 90%;
             }
@@ -135,13 +162,15 @@
         <p>👋 gm - I am David Walsh</p>
         <p>I have been involved in the staking industry for more than 4 years.</p>
         <p>Right now, I am Alluvial's Sales Lead working on growing the Liquid Collective protocol (LsETH).</p>
-        <p>Before Alluvial, I was the Head of Business at Staking Rewards - the industry’s leading data & research platform.</p>
         <p>
+            Before Alluvial, I was the Head of Business at Staking Rewards - the industry’s leading data & research platform. 
             I played a key role in growing the Staking Rewards userbase to hundreds of thousands of monthly users while 
             simultaneously growing the client base to ~150+ enterprise customers including Bloomberg, Grayscale, Kraken 
-            and Coinbase. 
+            and Coinbase.
         </p>
-        <p>In a past life before Staking Rewards, I was a Senior Consultant at EY for a few years, working in banks and other FIs.</p>
+        <p>
+            In a past life before Staking Rewards, I was a Senior Consultant at EY for a few years, working in banks and other FIs.
+        </p>
         <p>
             I graduated with an MSc in Management from UCD (Michael Smurfit Graduate Business School). 
             I also hold a BA in Economics from University College Cork (where I first learnt about crypto).
@@ -167,7 +196,7 @@
             <tr>
                 <td>Staking Rewards</td>
                 <td>Head of Sales and Partnerships</td>
-                <td>Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business. Helped scale the company’s brand/reputation.</td>
+                <td>Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business.</td>
             </tr>
             <tr>
                 <td>EY</td>
@@ -192,21 +221,20 @@
         </tbody>
     </table>
 
-    <!-- Bullet List Section 1 -->
-    <div class="bullet-list-section">
+    <!-- Bullet List Section -->
+    <div>
         <h3>Key Interests</h3>
-        <p> > Sustainable building in crypto </p>
-        <p> > Ecosystem-Growth </p>
-        <p> > Partnerships </p>
-        <p> > Ethereum </p>
-        <p> > Staking </p>
-        <p> > Solana </p>
-        <p> > Sales </p>
-        <p> > BD </p>
+        <p> > Sustainable building in crypto</p>
+        <p> > Ecosystem-Growth</p>
+        <p> > Partnerships</p>
+        <p> > Ethereum</p>
+        <p> > Staking</p>
+        <p> > Solana</p>
+        <p> > Sales</p>
+        <p> > BD</p>
     </div>
 
-    <!-- Bullet List Section 2 -->
-    <div class="bullet-list-section">
+    <div>
         <h3>Reach out to me if you want to..</h3>
         <p> > discuss LsETH and the advantages vs other LSTs</p>
         <p> > discuss angel investment opportunities</p>
@@ -232,6 +260,7 @@
     </script>
 </body>
 </html>
+
 
 
 
