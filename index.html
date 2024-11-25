@@ -50,30 +50,39 @@
         }
 
         /* Table Styling */
-        table {
+        .projects-table {
             width: 100%;
             border-collapse: collapse;
             margin-top: 15px;
+            background-color: inherit;
         }
 
-        th, td {
-            padding: 10px;
+        .projects-table th, .projects-table td {
+            padding: 15px 20px;
             text-align: left;
-            border: 1px solid #ddd;
             font-size: 16px;
+            border-bottom: 1px solid #555; /* Separator line */
         }
 
-        th {
+        .projects-table th {
+            background-color: #333;
+            color: #fff;
             font-weight: bold;
-            font-size: 18px;
         }
 
-        tbody tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-
-        body.night-mode tbody tr:nth-child(even) {
+        .projects-table tr:hover {
             background-color: #444;
+        }
+
+        .projects-table a {
+            text-decoration: none;
+            font-weight: bold; /* Bold for project links */
+            color: inherit;
+            transition: color 0.3s;
+        }
+
+        .projects-table a:hover {
+            color: #007BFF; /* Highlight on hover */
         }
 
         /* Profile Section */
@@ -182,22 +191,22 @@
     <!-- My Experience Section -->
     <div class="section">
         <h2>My Experience</h2>
-        <table>
+        <table class="projects-table">
             <thead>
                 <tr>
-                    <th>Projects</th>
+                    <th>Project</th>
                     <th>Role</th>
                     <th>Description</th>
                 </tr>
             </thead>
             <tbody>
                 <tr>
-                    <td>Alluvial Finance</td>
+                    <td><a href="https://alluvial.finance" target="_blank">> Alluvial Finance</a></td>
                     <td>Head of Sales</td>
                     <td>Leading Sales and BD at Liquid Collective, the institutional-focused LST on Ethereum.</td>
                 </tr>
                 <tr>
-                    <td>Staking Rewards</td>
+                    <td><a href="https://www.stakingrewards.com/" target="_blank">> Staking Rewards</a></td>
                     <td>Head of Sales and Partnerships</td>
                     <td>
                         Joined Staking Rewards as the first business-focused hire. Led the commercial arm of the business. 
@@ -210,12 +219,12 @@
                     <td>Consultant things like Excel, PPT, maximizing shareholder value, etc.</td>
                 </tr>
                 <tr>
-                    <td>Tempest Finance</td>
+                    <td><a href="https://www.tempestfinance.xyz/" target="_blank">> Tempest Finance</a></td>
                     <td>Advisor</td>
                     <td>Quantitative Research Firm building Decentralized Liquidity Management on Ambient Finance.</td>
                 </tr>
                 <tr>
-                    <td>Printr</td>
+                    <td><a href="https://printr.money/" target="_blank">> Printr</a></td>
                     <td>Angel</td>
                     <td>Instantly print memes to 69+ chains @ printr.money.</td>
                 </tr>
@@ -268,6 +277,7 @@
     </script>
 </body>
 </html>
+
 
 
 
