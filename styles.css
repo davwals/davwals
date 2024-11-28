@@ -53,3 +53,64 @@ footer {
     font-size: 0.9rem;
     color: #888;
 }
+/* Image Slider Styles */
+.slider-container {
+    position: relative;
+    width: 100%;
+    max-width: 500px; /* Adjust width as needed */
+    margin: 20px auto;
+    overflow: hidden;
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+.slider {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    margin: 0 5px; /* Space between images */
+    border-radius: 10px; /* Optional: for rounded corners */
+}
+
+/* Navigation buttons */
+.slider-button {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.3);
+    color: #fff;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    border: none;
+    z-index: 2;
+}
+
+.prev-button {
+    left: 10px;
+}
+
+.next-button {
+    right: 10px;
+}
+
+/* Responsive styling for mobile */
+@media (max-width: 768px) {
+    .slider-container {
+        max-width: 100%;
+    }
+
+    .slider img {
+        width: 90%;
+    }
+
+    .slider-button {
+        font-size: 18px;
+        padding: 8px;
+    }
+}
