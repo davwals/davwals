@@ -145,7 +145,7 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             body {
-                padding: 20px 3%; /* Adjusted padding to make use of more screen width */
+                padding: 20px 3%;
             }
 
             .profile-container, .about-section, .social-links {
@@ -154,18 +154,31 @@
 
             .container {
                 width: 100%;
-                padding: 0 2%; /* Added padding to ensure spacing is consistent */
+                padding: 0 2%;
+            }
+
+            /* Image Grid Styles for Mobile */
+            .image-grid img {
+                width: 100px;
+                height: 100px;
             }
         }
 
-        /* Image Grid Styles */
+        @media (min-width: 769px) {
+            /* Image Grid Styles for Larger Screens */
+            .image-grid img {
+                width: 500px;
+                height: 500px;
+            }
+        }
+
+        /* Grid container with fixed two columns */
         .container {
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        /* Grid container with fixed two columns */
         .image-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr); /* Always two columns */
@@ -174,10 +187,7 @@
             justify-items: center; /* Center the images in the grid cells */
         }
 
-        /* Image styling */
         .image-grid img {
-            width: 100px;
-            height: 100px;
             border-radius: 10px;
             object-fit: cover;
             transition: transform 0.3s ease;
@@ -189,7 +199,7 @@
         }
 
     </style>
-</head>
+</head> 
 <body>
     <!-- Theme Toggle Button -->
     <span class="theme-toggle" id="theme-toggle">🌙</span>
@@ -295,7 +305,8 @@
         <p> > discuss advisory opportunities.</p>
         <p> > discuss collaboration ideas.</p>
     </div>
-    <!-- When AFK Section (Image Grid) -->
+    
+ <!-- When AFK Section (Image Grid) -->
     <div class="container">
         <h3>When AFK ↓</h3>
         <div class="image-grid">
@@ -326,6 +337,3 @@
     </script>
 </body>
 </html>
-
-
-
