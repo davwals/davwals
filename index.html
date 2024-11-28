@@ -142,18 +142,14 @@
             color: #007BFF;
         }
 
-        /* Image Slider Styling */
-        .image-slider h3 {
-            font-size: 24px;
-            margin-bottom: 15px;
-        }
-
+        /* Image Slider Styles */
         .slider-container {
             position: relative;
             width: 100%;
-            max-width: 600px; /* Control max width */
-            margin: 0 auto;
+            max-width: 500px; /* Adjust width as needed */
+            margin: 20px auto;
             overflow: hidden;
+            border-radius: 10px; /* Optional: for rounded corners */
         }
 
         .slider {
@@ -164,12 +160,13 @@
         .slider img {
             width: 100%;
             height: 100%;
-            object-fit: cover; /* Makes the image fill the container */
+            object-fit: cover;
             display: block;
-            margin: 0 10px;
-            border-radius: 10px; /* Optional: rounded corners for images */
+            margin: 0 5px; /* Space between images */
+            border-radius: 10px; /* Optional: for rounded corners */
         }
 
+        /* Navigation buttons */
         .slider-button {
             position: absolute;
             top: 50%;
@@ -191,21 +188,7 @@
             right: 10px;
         }
 
-        /* Ensure responsive design for images */
-        @media (max-width: 768px) {
-            .slider-container {
-                max-width: 100%;
-            }
-            
-            .slider img {
-                width: 90%; /* Reduce size on mobile */
-                height: auto;
-                object-fit: cover;
-                margin: 0 5px;
-            }
-        }
-
-        /* Responsive Design */
+        /* Responsive styling for mobile */
         @media (max-width: 768px) {
             body {
                 padding: 20px 10%;
@@ -213,6 +196,19 @@
 
             .profile-container, .about-section, .social-links {
                 width: 100%;
+            }
+
+            .slider-container {
+                max-width: 100%;
+            }
+
+            .slider img {
+                width: 90%;
+            }
+
+            .slider-button {
+                font-size: 18px;
+                padding: 8px;
             }
         }
     </style>
@@ -250,6 +246,19 @@
         </p>
     </div>
 
+    <!-- Key Interests Section -->
+    <div class="section">
+        <h2>Key Interests</h2>
+        <div class="bullet-list">
+            <p>🌱 Decentralized Finance (DeFi)</p>
+            <p>📈 Cryptocurrency Market Research</p>
+            <p>🔒 Blockchain Security</p>
+            <p>🏦 Staking & Yield Generation</p>
+            <p>💡 Web3 and DAOs</p>
+            <p>🌍 Global Fintech Innovations</p>
+        </div>
+    </div>
+
     <!-- My Experience Section -->
     <div class="section">
         <h2>My Experience</h2>
@@ -278,58 +287,73 @@
                 <tr>
                     <td><a href="https://www.ey.com/" target="_blank">> EY</a></td>
                     <td>Senior Consultant</td>
-                    <td>Consultant things like Excel, PPT, maximizing shareholder value, etc.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://printr.money/" target="_blank">> Tempest Finance</a></td>
-                    <td>Advisor</td>
-                    <td>Quantitative Research Firm building Decentralized Liquidity Management on Ambient Finance.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://defi.st" target="_blank">> Decentralized Finance</a></td>
-                    <td>Analyst</td>
-                    <td>Managed corporate strategy, including marketing, research, and data analytics.</td>
+                    <td>Consultant things like Excel, PPT, maximizing profitability at clients.</td>
                 </tr>
             </tbody>
         </table>
     </div>
 
-    <!-- Image Slider Section -->
-    <div class="image-slider section">
-        <h3>Image Gallery</h3>
-        <div class="slider-container">
-            <div class="slider">
-                <img src="https://via.placeholder.com/300/FF5733/FFFFFF?text=Image+1" alt="Image 1">
-                <img src="https://via.placeholder.com/300/33FF57/FFFFFF?text=Image+2" alt="Image 2">
-                <img src="https://via.placeholder.com/300/3357FF/FFFFFF?text=Image+3" alt="Image 3">
-            </div>
-            <button class="slider-button prev-button">&#10094;</button>
-            <button class="slider-button next-button">&#10095;</button>
+    <!-- Reach Out Section -->
+    <div class="section">
+        <h2>Reach Out</h2>
+        <p>If you'd like to connect, feel free to reach out via email, Twitter, or LinkedIn:</p>
+        <div class="social-links">
+            <a href="https://x.com/0xdavidwalsh" target="_blank">Twitter</a>
+            <a href="https://www.linkedin.com/in/david-w-088340a6/" target="_blank">LinkedIn</a>
         </div>
     </div>
 
-    <!-- Social Links Section -->
-    <div class="social-links">
-        <p>Feel free to connect with me on social media:</p>
-        <a href="https://twitter.com/davwals" target="_blank">Twitter</a> | 
-        <a href="https://www.linkedin.com/in/davidwalsh100/" target="_blank">LinkedIn</a>
-    </div>
-
-
-
     <!-- Image Slider Section -->
-<div class="slider-container">
-    <div class="slider">
-        <img src="https://via.placeholder.com/500x300?text=Image+1" alt="Image 1">
-        <img src="https://via.placeholder.com/500x300?text=Image+2" alt="Image 2">
-        <img src="https://via.placeholder.com/500x300?text=Image+3" alt="Image 3">
+    <div class="slider-container">
+        <div class="slider">
+            <img src="https://via.placeholder.com/300?text=Image+1" alt="Image 1">
+            <img src="https://via.placeholder.com/300?text=Image+2" alt="Image 2">
+            <img src="https://via.placeholder.com/300?text=Image+3" alt="Image 3">
+        </div>
+        <button class="slider-button prev-button">&#10094;</button>
+        <button class="slider-button next-button">&#10095;</button>
     </div>
-    <button class="slider-button prev-button">&#10094;</button>
-    <button class="slider-button next-button">&#10095;</button>
-</div>
 
+    <!-- JavaScript for Slider -->
+    <script>
+        const prevButton = document.querySelector('.prev-button');
+        const nextButton = document.querySelector('.next-button');
+        const slider = document.querySelector('.slider');
+        let index = 0;
+
+        function moveSlider() {
+            const slides = document.querySelectorAll('.slider img');
+            const totalSlides = slides.length;
+            if (index < 0) {
+                index = totalSlides - 1;
+            } else if (index >= totalSlides) {
+                index = 0;
+            }
+            slider.style.transform = `translateX(-${index * 100}%)`;
+        }
+
+        prevButton.addEventListener('click', () => {
+            index--;
+            moveSlider();
+        });
+
+        nextButton.addEventListener('click', () => {
+            index++;
+            moveSlider();
+        });
+    </script>
+
+    <!-- Dark Mode Toggle -->
+    <script>
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            themeToggle.textContent = document.body.classList.contains('night-mode') ? '☀️' : '🌙';
+        });
+    </script>
 </body>
 </html>
+
 
 
 
