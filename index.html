@@ -151,11 +151,6 @@
             .profile-container, .about-section, .social-links {
                 width: 100%;
             }
-
-            /* Adjust for small screen in image grid */
-            .image-grid {
-                grid-template-columns: 1fr; /* Single column on smaller screens */
-            }
         }
 
         /* Image Grid Styles */
@@ -165,13 +160,13 @@
             margin: 0 auto;
         }
 
-        /* Grid container with dynamic number of columns */
+        /* Grid container with fixed two columns */
         .image-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); /* Set column width to be responsive */
+            grid-template-columns: repeat(2, 1fr); /* Always two columns */
             grid-gap: 20px;
             margin-top: 30px;
-            justify-items: center; /* Ensure images are centered in each grid cell */
+            justify-items: center; /* Center the images in the grid cells */
         }
 
         /* Image styling */
@@ -284,6 +279,30 @@
         </table>
     </div>
 
+
+    <!-- Key Interests Section -->
+    <div class="bullet-list section">
+        <h3>Key Interests</h3>
+        <p> > Sustainable building in crypto</p>
+        <p> > Ecosystem-Growth</p>
+        <p> > Partnerships</p>
+        <p> > Ethereum</p>
+        <p> > Staking</p>
+        <p> > Solana</p>
+        <p> > Sales</p>
+        <p> > BD</p>
+    </div>
+
+    <!-- Reach Out Section -->
+    <div class="bullet-list section">
+        <h3>Reach out to me if you want to...</h3>
+        <p> > discuss LsETH and the advantages vs other LSTs.</p>
+        <p> > discuss angel investment opportunities.</p>
+        <p> > discuss advisory opportunities.</p>
+        <p> > discuss collaboration ideas.</p>
+    </div>
+
+    
     <!-- Image Grid Section -->
     <div class="container">
         <h2>Sometimes I take pictures ↓</h2>
@@ -319,6 +338,7 @@
 
 </body>
 </html>
+
 
 
 
