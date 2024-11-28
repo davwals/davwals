@@ -6,7 +6,7 @@
     <title>David Walsh</title>
     <link href="https://fonts.googleapis.com/css2?family=Menlo&display=swap" rel="stylesheet">
     <style>
-        /* Basic Reset */ 
+        /* Basic Reset */
         body, h2, h3, p {
             margin: 0;
             padding: 0;
@@ -53,7 +53,7 @@
         .projects-table {
             width: 90%;
             border-collapse: collapse;
-            margin-top: 30px; /* Increased margin for more space */
+            margin-top: 15px;
             background-color: inherit;
         }
 
@@ -156,18 +156,12 @@
                 width: 100%;
                 padding: 0 2%; /* Added padding to ensure spacing is consistent */
             }
-
-            /* Scrollable Table for Mobile */
-            .table-wrapper {
-                overflow-x: auto;
-                -webkit-overflow-scrolling: touch;
-            }
         }
 
         /* Image Grid Styles */
         .container {
             width: 100%;
-            max-width: 1000px;
+            max-width: 1400px;
             margin: 0 auto;
         }
 
@@ -182,33 +176,16 @@
 
         /* Image styling */
         .image-grid img {
-            width: 100%;
+            width: 100px;
+            height: 100px;
             border-radius: 10px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        /* Different image sizes */
-        .small {
-            height: 100px;
-        }
-
-        .medium {
-            height: 100px;
-        }
-
-        .large {
-            height: 100px;
-        }
-
-        .wide {
-            grid-column: span 2;
-            height: 100px;
-        }
-
-        /* Hover effect */
+        /* Optional: Slight hover effect */
         .image-grid img:hover {
-            transform: scale(1.01);
+            transform: scale(1.05);
         }
 
     </style>
@@ -284,12 +261,12 @@
                     </tr>
                     <tr>
                         <td><a href="https://printr.money/" target="_blank">> Printr</a></td>
-                        <td>Angel Investor</td>
+                        <td>Advisor</td>
                         <td>Creating programmable governance for web3 networks.</td>
                     </tr>
                     <tr>
                         <td><a href="https://www.nektar.network/" target="_blank">> Nektar Network</a></td>
-                        <td>Angel Investor</td>
+                        <td>Angel</td>
                         <td>Decentralized Infrastructure Marketplace.</td>
                     </tr>
                 </tbody>
@@ -301,56 +278,54 @@
     <div class="bullet-list section">
         <h3>Key Interests</h3>
         <p> > Sustainable building in crypto</p>
-        <p> > Business Development</p>
         <p> > Ecosystem-Growth</p>
         <p> > Partnerships</p>
         <p> > Ethereum</p>
         <p> > Staking</p>
         <p> > Solana</p>
         <p> > Sales</p>
-        <p> > DeFi</p> 
+        <p> > BD</p>
     </div>
 
     <!-- Reach Out Section -->
     <div class="bullet-list section">
-        <h3>Reach out to me if you want to</h3>
-        <p> > discuss LsETH its the advantages vs other LSTs.</p>
+        <h3>Reach out to me if you want to...</h3>
+        <p> > discuss LsETH and the advantages vs other LSTs.</p>
         <p> > discuss angel investment opportunities.</p>
         <p> > discuss advisory opportunities.</p>
-        <p> > discuss collab ideas.</p>
+        <p> > discuss collaboration ideas.</p>
     </div>
-
-<!-- Image Grid Section -->
-<div class="container">
-    <h3>When AFK ↓</h3>
-    <div class="image-grid">
-        <img src="https://i.imgur.com/QSYpVqQ.png" class="small">
-        <img src="https://i.imgur.com/JvoFKJJ.png" class="small">
-        <img src="https://i.imgur.com/jwMXot3.jpeg" class="small">
-        <img src="https://i.imgur.com/AtwD4fl.png" class="small">
-        <img src="https://i.imgur.com/A1WVqW8.png" class="small">
-        <img src="https://i.imgur.com/UPRIKQK.jpeg" class="small">
-        <img src="https://i.imgur.com/5Og9L2Y.jpeg" class="small">
-        <img src="https://i.imgur.com/DZ5BEfz.jpeg" class="small">
+    <!-- When AFK Section (Image Grid) -->
+    <div class="container">
+        <h3>When AFK ↓</h3>
+        <div class="image-grid">
+            <img src="https://i.imgur.com/QSYpVqQ.png" class="small">
+            <img src="https://i.imgur.com/JvoFKJJ.png" class="small">
+            <img src="https://i.imgur.com/jwMXot3.jpeg" class="small">
+            <img src="https://i.imgur.com/AtwD4fl.png" class="small">
+            <img src="https://i.imgur.com/A1WVqW8.png" class="small">
+            <img src="https://i.imgur.com/UPRIKQK.jpeg" class="small">
+            <img src="https://i.imgur.com/5Og9L2Y.jpeg" class="small">
+            <img src="https://i.imgur.com/DZ5BEfz.jpeg" class="small">
+        </div>
     </div>
-</div>
-
 
     <!-- Social Links Section -->
     <div class="social-links">
         <a href="https://twitter.com/davwals" target="_blank">Twitter</a>
-        <a href="https://www.linkedin.com/in/davidwalsh21/" target="_blank">LinkedIn</a>
+        <a href="https://www.linkedin.com/in/davidwalsh01/" target="_blank">LinkedIn</a>
     </div>
 
-    <!-- Script for Theme Toggle -->
+    <!-- JavaScript for Theme Toggle -->
     <script>
-        const toggleButton = document.getElementById('theme-toggle');
-        const body = document.body;
-
-        toggleButton.addEventListener('click', () => {
-            body.classList.toggle('night-mode');
-            toggleButton.textContent = body.classList.contains('night-mode') ? '🌞' : '🌙';
+        const themeToggle = document.getElementById('theme-toggle');
+        themeToggle.addEventListener('click', () => {
+            document.body.classList.toggle('night-mode');
+            themeToggle.textContent = document.body.classList.contains('night-mode') ? '🌞' : '🌙';
         });
     </script>
 </body>
 </html>
+
+
+
