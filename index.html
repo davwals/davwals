@@ -161,15 +161,22 @@
 
         .slider img {
             width: 100%;
-            object-fit: cover;
+            height: 100%;
+            object-fit: contain; /* Makes images scale down while maintaining aspect ratio */
             display: none; /* Hide all images initially */
         }
 
         /* Ensure responsive design for images */
         @media (max-width: 768px) {
+            .slider-container {
+                max-width: 100%; /* Ensures the container fits within mobile screen */
+                overflow: hidden;
+            }
+            
             .slider img {
                 width: 100%;
                 height: auto;
+                object-fit: contain; /* Prevents horizontal scrolling, keeps images zoomed out */
             }
         }
 
@@ -249,14 +256,9 @@
                     <td>Consultant things like Excel, PPT, maximizing shareholder value, etc.</td>
                 </tr>
                 <tr>
-                    <td><a href="https://www.tempestfinance.xyz/" target="_blank">> Tempest Finance</a></td>
+                    <td><a href="https://printr.money/" target="_blank">> Tempest Finance</a></td>
                     <td>Advisor</td>
                     <td>Quantitative Research Firm building Decentralized Liquidity Management on Ambient Finance.</td>
-                </tr>
-                <tr>
-                    <td><a href="https://printr.money/" target="_blank">> Printr</a></td>
-                    <td>Angel</td>
-                    <td>Instantly print memes to 69+ chains @ printr.money.</td>
                 </tr>
                 <tr>
                     <td><a href="https://www.nektar.network/" target="_blank">> Nektar Network</a></td>
@@ -272,10 +274,6 @@
         <h3>Key Interests</h3>
         <p> > Sustainable building in crypto</p>
         <p> > Ecosystem-Growth</p>
-        <p> > Partnerships</p>
-        <p> > Ethereum</p>
-        <p> > Staking</p>
-        <p> > Solana</p>
         <p> > DeFi</p>
         <p> > Data Analytics</p>
     </div>
@@ -327,5 +325,6 @@
     </script>
 </body>
 </html>
+
 
 
