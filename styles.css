@@ -45,11 +45,6 @@ h1 {
     transition: color 0.3s ease;
 }
 
-.location-section {
-    margin-bottom: 60px; /
-}
-
-
 .social-links a:hover {
     color: #888;
 }
