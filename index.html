@@ -42,50 +42,6 @@
             line-height: 1.6;
             margin-bottom: 15px;
         }
-        <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8"> 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>David Walsh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Menlo&display=swap" rel="stylesheet">
-    <style>
-        /* Basic Reset */
-        body, h2, h3, p {
-            margin: 0;
-            padding: 0;
-            font-family: 'Menlo', monospace;
-        }
-        
-        /* Default Light Mode (Day) */
-        body {
-            background-color: #FAFAFA;
-            color: #333;
-            padding: 40px 12.5%;
-            transition: background-color 0.3s, color 0.3s;
-        }
-
-        /* Section Styling */
-        .section {
-            margin-bottom: 40px;
-        }
-
-        /* Heading and Paragraph Styling */
-        h2 {
-            font-size: 22px;
-            margin-bottom: 15px;
-        }
-
-        h3 {
-            font-size: 18px;
-            margin-bottom: 15px;
-        }
-
-        p {
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 15px;
-        }
 
         /* Dark Mode (Night) */
         body.night-mode {
@@ -144,11 +100,6 @@
             margin-right: 20px;
         }
 
-        /* About Section */
-        .about-section p {
-            margin-bottom: 20px;
-        }
-
         /* Bullet List Styling */
         .bullet-list p {
             margin-bottom: 15px;
@@ -202,7 +153,7 @@
             }
 
             /* Image Grid Styles for Mobile */
-            .image-grid img {
+            .afk-grid img {
                 width: 175px;
                 height: 175px;
             }
@@ -210,38 +161,36 @@
 
         @media (min-width: 769px) {
             /* Image Grid Styles for Larger Screens */
-            .image-grid img {
+            .afk-grid img {
                 width: 400px;
                 height: 400px;
             }
         }
 
-        /* Grid container with fixed two columns */
-        .container {
+        /* When AFK Section Styling */
+        .afk-section {
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
         }
 
-        .image-grid {
+        .afk-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr); /* Always two columns */
+            grid-template-columns: repeat(2, 1fr);
             grid-gap: 15px;
             margin-top: 25px;
-            justify-items: center; /* Center the images in the grid cells */
+            justify-items: center;
         }
 
-        .image-grid img {
+        .afk-grid img {
             border-radius: 10px;
             object-fit: cover;
             transition: transform 0.3s ease;
         }
 
-        /* Optional: Slight hover effect */
-        .image-grid img:hover {
+        .afk-grid img:hover {
             transform: scale(1.01);
         }
-
     </style>
 </head> 
 <body>
@@ -264,96 +213,66 @@
         <p>I have been working in the crypto industry, specifically staking, for 4+ years.</p>
         <p>Currently, I am the Head of Ecosystem at Alluvial where we work on the Liquid Collective protocol (LsETH) and Alluvial's Stake Management System (SMS).</p>
         <p>
-            Before joining Alluvial, I led the business teams at Staking Rewards, the staking industry’s leading data and research platform. During my time there, I played a key role in growing the user base to hundreds of thousands of monthly users while expanding the client base to include over 150 enterprises, such as Bloomberg, Binance, Kraken, and Coinbase.
+            Before joining Alluvial, I led the business teams at Staking Rewards, the staking industry’s leading data and research platform.
         </p>
-        <p>
-            In a past life, I was a consultant at EY in the UK and Ireland. I have a Masters in Management from University College Dublin and a BA in Economics from University College Cork.
-        </p>
-
     </div>
     
     <!-- My Experience Section -->
     <div class="section">
-        <div class="table-wrapper">
-            <table class="projects-table">
-                <h3>Experience ↓</h3>
-                <thead>
-                    <tr>
-                        <th>Project</th>
-                        <th>Role</th>
-                        <th>Description</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><a href="https://alluvial.finance" target="_blank">> Alluvial Finance</a></td>
-                        <td>Head of Ecosystem</td>
-                        <td>Leading sales, BD and partnerships at Liquid Collective, a compliance-focused LST on Ethereum with integrations across multiple qualified custodians and exchanges.</td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://www.stakingrewards.com/" target="_blank">> Staking Rewards</a></td>
-                        <td>Head of Commercial</td>
-                        <td>
-                            Founded and gained the successful uptake of the <a href="https://www.stakingrewards.com/vsp">Verified Staking Provider</a> program and the <a href="https://www.stakingsummit.com">Staking Summit</a>. Achieved a 3.5x increase in company revenues within first 12 months, making the company a profit-making entity.
-                        </td>
-                    </tr>
-                    <tr>
-                        <td><a href="https://www.ey.com/" target="_blank">> EY</a></td>
-                        <td>Senior Consultant</td>
-                        <td>Excel, PPT, project management, etc.</td>
-                    </tr>
-                    <tr>
-                        <td><a " target="_blank">> Other</a></td>
-                        <td>Angel Investor & Advisor</td>
-                        <td>Advisor in Tempest Finance and Angel in Diva (now Nektar) and Printrr.</td>
-                    </tr>
-                </tbody>
-            </table>
+        <table class="projects-table">
+            <h3>Experience ↓</h3>
+            <thead>
+                <tr>
+                    <th>Project</th>
+                    <th>Role</th>
+                    <th>Description</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><a href="https://alluvial.finance" target="_blank">> Alluvial Finance</a></td>
+                    <td>Head of Ecosystem</td>
+                    <td>Leading sales, BD and partnerships at Liquid Collective.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.stakingrewards.com/" target="_blank">> Staking Rewards</a></td>
+                    <td>Head of Commercial</td>
+                    <td>Founded the Verified Staking Provider program.</td>
+                </tr>
+                <tr>
+                    <td><a href="https://www.ey.com/" target="_blank">> EY</a></td>
+                    <td>Senior Consultant</td>
+                    <td>Excel, PPT, project management, etc.</td>
+                </tr>
+                <tr>
+                    <td><a href="#" target="_blank">> Other</a></td>
+                    <td>Angel Investor & Advisor</td>
+                    <td>Advisor in Tempest Finance.</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- When AFK Section -->
+    <div class="afk-section">
+        <h3>When AFK ↓</h3>
+        <div class="afk-grid">
+            <img src="https://i.imgur.com/VuXvAOW.jpeg">
+            <img src="https://i.imgur.com/210cTCu.png">
+            <img src="https://i.imgur.com/jwMXot3.jpeg">
+            <img src="https://i.imgur.com/DZ5BEfz.jpeg">
+            <img src="https://i.imgur.com/A1WVqW8.png">
+            <img src="https://i.imgur.com/rimHOuw.jpeg">
+            <img src="https://i.imgur.com/5Og9L2Y.jpeg">
+            <img src="https://i.imgur.com/JvoFKJJ.png">
         </div>
     </div>
-
-    
-    <!-- Key Interests Section -->
-    <div class="bullet-list section">
-        <h3>Areas of Interest ↓</h3>
-        <p> > Ecosystem Development</p>
-        <p> > Ecosystem-Growth</p>
-        <p> > Partnerships</p>
-        <p> > Strategy</p>
-        <p> > Staking</p>
-        <p> > Sales</p>
-        <p> > BD</p>
-    </div>
-
-    <!-- Reach Out Section -->
-    <div class="bullet-list section">
-        <h3>Reach out to discuss ↓</h3>
-        <p> > Partnership & collaboration opportunities </p>
-        <p> > Angel investment opportunities </p>
-    
-    </div>
-    
-<!-- When AFK Section (Image Grid) -->
-<div class="section container">
-    <h3>When AFK ↓</h3>
-    <div class="image-grid">
-        <img src="https://i.imgur.com/VuXvAOW.jpeg" class="small">
-        <img src="https://i.imgur.com/210cTCu.png" class="small">
-        <img src="https://i.imgur.com/jwMXot3.jpeg" class="small">
-        <img src="https://i.imgur.com/DZ5BEfz.jpeg" class="small">
-        <img src="https://i.imgur.com/A1WVqW8.png" class="small">
-        <img src="https://i.imgur.com/rimHOuw.jpeg" class="small">
-        <img src="https://i.imgur.com/5Og9L2Y.jpeg" class="small">
-        <img src="https://i.imgur.com/JvoFKJJ.png" class="small">
-    </div>
-</div>
 
     <!-- Social Links Section -->
     <div class="social-links">
         <a href="https://twitter.com/davwals" target="_blank">Twitter</a>
         <a href="https://www.linkedin.com/in/davwals/" target="_blank">LinkedIn</a>
         <a href="https://t.me/davwals" target="_blank">Telegram</a>
-
     </div>
 
     <!-- JavaScript for Theme Toggle -->
@@ -366,4 +285,4 @@
     </script>
 </body>
 </html>
- 
+
