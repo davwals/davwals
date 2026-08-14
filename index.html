@@ -278,19 +278,6 @@
                 font-size: 9px;
             }
 
-            /* Image Grid Styles for Mobile */
-            .afk-grid img {
-                width: 150px;
-                height: 150px;
-            }
-        }
-
-        @media (min-width: 769px) {
-            /* Image Grid Styles for Larger Screens */
-            .afk-grid img {
-                width: 400px;
-                height: 400px;
-            }
         }
 
         /* When AFK Section Styling */
@@ -300,22 +287,64 @@
             margin: 0 auto;
         }
 
-        .afk-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            grid-gap: 15px;
+        /* AFK Carousel */
+        .afk-carousel {
+            display: flex;
+            align-items: center;
+            gap: 10px;
             margin-top: 25px;
-            justify-items: center;
+            max-width: 480px;
         }
 
-        .afk-grid img {
+        .afk-viewport {
+            overflow: hidden;
             border-radius: 4px;
-            object-fit: cover;
-            transition: transform 0.3s ease;
+            flex: 1 1 auto;
+            min-width: 0;
         }
 
-        .afk-grid img:hover {
-            transform: scale(1.01);
+        .afk-track {
+            display: flex;
+            transition: transform 0.4s ease;
+        }
+
+        .afk-track img {
+            flex: 0 0 100%;
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            object-fit: cover;
+            border-radius: 4px;
+            display: block;
+        }
+
+        .afk-nav {
+            flex: 0 0 auto;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            border: 1px solid #ddd;
+            background: none;
+            color: #888;
+            font-family: 'JetBrains Mono', monospace;
+            font-size: 20px;
+            line-height: 1;
+            cursor: pointer;
+            transition: color 0.2s, border-color 0.2s;
+        }
+
+        .afk-nav:hover {
+            color: #3B82F6;
+            border-color: #3B82F6;
+        }
+
+        body.night-mode .afk-nav {
+            border-color: #444;
+            color: #999;
+        }
+
+        body.night-mode .afk-nav:hover {
+            color: #3B82F6;
+            border-color: #3B82F6;
         }
 
         /* Collapsible Section Headings */
@@ -430,15 +459,21 @@
     <div class="afk-section">
         <h3 class="section-heading collapsed" role="button" tabindex="0" aria-expanded="false">When AFK <span class="arrow">↓</span></h3>
         <div class="section-content collapsed">
-        <div class="afk-grid">
-            <img src="https://i.imgur.com/VuXvAOW.jpeg">
-            <img src="https://i.imgur.com/210cTCu.png">
-            <img src="https://i.imgur.com/jwMXot3.jpeg">
-            <img src="https://i.imgur.com/ov6CHXX.jpeg">
-            <img src="https://i.imgur.com/A1WVqW8.png">
-            <img src="https://i.imgur.com/n7Q0kMH.jpeg">
-            <img src="https://i.imgur.com/5Og9L2Y.jpeg">
-            <img src="https://i.imgur.com/JvoFKJJ.png">
+        <div class="afk-carousel">
+            <button class="afk-nav afk-prev" aria-label="Previous photo">‹</button>
+            <div class="afk-viewport">
+                <div class="afk-track">
+                    <img src="https://i.imgur.com/VuXvAOW.jpeg">
+                    <img src="https://i.imgur.com/210cTCu.png">
+                    <img src="https://i.imgur.com/jwMXot3.jpeg">
+                    <img src="https://i.imgur.com/ov6CHXX.jpeg">
+                    <img src="https://i.imgur.com/A1WVqW8.png">
+                    <img src="https://i.imgur.com/n7Q0kMH.jpeg">
+                    <img src="https://i.imgur.com/5Og9L2Y.jpeg">
+                    <img src="https://i.imgur.com/JvoFKJJ.png">
+                </div>
+            </div>
+            <button class="afk-nav afk-next" aria-label="Next photo">›</button>
         </div>
         </div>
     </div>
@@ -474,6 +509,23 @@
                 }
             });
         });
+
+        // AFK Carousel
+        (() => {
+            const track = document.querySelector('.afk-track');
+            if (!track) return;
+            const slides = track.children.length;
+            let index = 0;
+            const update = () => {
+                track.style.transform = `translateX(-${index * 100}%)`;
+            };
+            const go = (step) => {
+                index = (index + step + slides) % slides;
+                update();
+            };
+            document.querySelector('.afk-prev').addEventListener('click', () => go(-1));
+            document.querySelector('.afk-next').addEventListener('click', () => go(1));
+        })();
     </script>
 </body>
 </html>
