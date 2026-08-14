@@ -317,12 +317,41 @@
         .afk-grid img:hover {
             transform: scale(1.01);
         }
+
+        /* Collapsible Section Headings */
+        h3.section-heading {
+            cursor: pointer;
+        }
+
+        h3.section-heading:focus-visible {
+            outline: 1px dotted #3B82F6;
+            outline-offset: 4px;
+        }
+
+        h3.section-heading .arrow {
+            display: inline-block;
+            transition: transform 0.25s ease;
+        }
+
+        h3.section-heading.collapsed .arrow {
+            transform: rotate(-90deg);
+        }
+
+        .section-content {
+            overflow: hidden;
+            max-height: 3000px;
+            transition: max-height 0.25s ease;
+        }
+
+        .section-content.collapsed {
+            max-height: 0;
+        }
     </style>
 </head> 
 <body>
     <!-- Top Bar with Last Updated and Theme Toggle -->
     <div class="top-bar">
-        <span class="last-updated"><span class="last-updated-label">Last Updated:</span> <span class="last-updated-date">December 23, 2025</span></span>
+        <span class="last-updated"><span class="last-updated-label">Last Updated:</span> <span class="last-updated-date">August 14, 2026</span></span>
         <span class="theme-toggle" id="theme-toggle">🌙</span>
     </div>
 
@@ -331,32 +360,34 @@
         <img src="https://i.imgur.com/ZTlNXmR.jpeg" alt="Profile Picture">
         <div>
             <h2>David Walsh</h2>
-            <p>Head of Enterprise @ Ethereum Foundation</p>
+            <p>Co-founder & Executive Director @ Ethereum Institutional</p>
         </div>
     </div>
 
     <!-- About Me Section -->
     <div class="about-section section">
-        <h3>About Me ↓</h3>
-        <p>gm, I am David Walsh (@davwals)</p>
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">About Me <span class="arrow">↓</span></h3>
+        <div class="section-content">
+            <p>gm, I am David Walsh (@davwals)</p>
+        </div>
     </div>
     
     <!-- Experience Section -->
     <div class="section">
-        <h3>Experience ↓</h3>
-        
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">Experience <span class="arrow">↓</span></h3>
+        <div class="section-content">
         <p class="temporal-label">//now//</p>
         <div class="experience-item">
-            driving institutional adoption of Ethereum at the <a href="https://institutions.ethereum.org/" target="_blank">Ethereum Foundation</a>
-        </div>
-        <div class="experience-item">
-            writing <a href="https://enterpriseonchain.substack.com" target="_blank">Enterprise Onchain</a>, a newsletter on institutional crypto adoption with ~9k readers
+            co-founder and Executive Director of <a href="https://ethereuminstitutional.org" target="_blank">Ethereum Institutional</a>, a neutral non-profit accelerating institutional adoption of Ethereum - spun out of the Ethereum Foundation's enterprise function in 2026, anchor-funded by BitMine, SharpLink and Joseph Lubin, with 100+ ecosystem supporters
         </div>
         <div class="experience-item">
             angel investing & advising select projects
         </div>
 
         <p class="temporal-label">//previously//</p>
+        <div class="experience-item">
+            built and led the enterprise function at the <a href="https://institutions.ethereum.org/" target="_blank">Ethereum Foundation</a> from 2024 to 2026, originating the institutional pipeline that became Ethereum Institutional
+        </div>
         <div class="experience-item">
             grew <a href="https://liquidcollective.io/" target="_blank">Liquid Collective</a> to $1B+ TVL without public incentives or token - partners include Coinbase, Kraken, Galaxy, Anchorage
         </div>
@@ -369,11 +400,13 @@
         <div class="experience-item">
             MSc Management from <a href="https://www.smurfitschool.ie/" target="_blank">UCD Smurfit</a> & BA Economics from <a href="https://www.ucc.ie/" target="_blank">UCC</a>
         </div>
+        </div>
     </div>
 
     <!-- Writing Section -->
     <div class="section">
-        <h3>Writing ↓</h3>
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">Writing <span class="arrow">↓</span></h3>
+        <div class="section-content">
         <div class="writing-item">
             <a href="https://enterpriseonchain.substack.com/p/jpmorgan-just-went-defi-tldr" target="_blank">JPMorgan Just Went DeFi (TLDR)</a><span class="writing-item-meta">· 2025</span>
         </div>
@@ -383,29 +416,36 @@
         <div class="writing-item">
             <a href="https://enterpriseonchain.substack.com/p/standard-chartered-2t-rwa-market" target="_blank">Standard Chartered: $2T RWA Market</a><span class="writing-item-meta">· 2025</span>
         </div>
+        </div>
     </div>
 
     <!-- Key Interests Section -->
     <div class="bullet-list section">
-        <h3>Areas of Interest ↓</h3>
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">Areas of Interest <span class="arrow">↓</span></h3>
+        <div class="section-content">
         <p> → Ecosystem Development</p>
         <p> → Ecosystem Growth</p>
         <p> → Partnerships</p>
         <p> → Strategy</p>
         <p> → Sales</p>
         <p> → BD</p>
+        </div>
     </div>
 
     <!-- Reach Out Section -->
     <div class="bullet-list section">
-        <h3>Reach out to discuss ↓</h3>
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">Reach out to discuss <span class="arrow">↓</span></h3>
+        <div class="section-content">
         <p> → Partnership & collaboration opportunities </p>
         <p> → Investment/advisor opportunities </p>
-    </div> 
-    
+        <p> → Senior roles at Ethereum Institutional </p>
+        </div>
+    </div>
+
     <!-- When AFK Section -->
     <div class="afk-section">
-        <h3>When AFK ↓</h3>
+        <h3 class="section-heading" role="button" tabindex="0" aria-expanded="true">When AFK <span class="arrow">↓</span></h3>
+        <div class="section-content">
         <div class="afk-grid">
             <img src="https://i.imgur.com/VuXvAOW.jpeg">
             <img src="https://i.imgur.com/210cTCu.png">
@@ -415,6 +455,7 @@
             <img src="https://i.imgur.com/n7Q0kMH.jpeg">
             <img src="https://i.imgur.com/5Og9L2Y.jpeg">
             <img src="https://i.imgur.com/JvoFKJJ.png">
+        </div>
         </div>
     </div>
 
@@ -431,6 +472,23 @@
         themeToggle.addEventListener('click', () => {
             document.body.classList.toggle('night-mode');
             themeToggle.textContent = document.body.classList.contains('night-mode') ? '🌞' : '🌙';
+        });
+
+        // Collapsible Sections
+        document.querySelectorAll('.section-heading').forEach((heading) => {
+            const content = heading.nextElementSibling;
+            const toggle = () => {
+                const collapsed = heading.classList.toggle('collapsed');
+                content.classList.toggle('collapsed', collapsed);
+                heading.setAttribute('aria-expanded', String(!collapsed));
+            };
+            heading.addEventListener('click', toggle);
+            heading.addEventListener('keydown', (e) => {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggle();
+                }
+            });
         });
     </script>
 </body>
