@@ -291,25 +291,38 @@
         .afk-carousel {
             display: flex;
             align-items: center;
-            gap: 10px;
-            margin-top: 25px;
-            max-width: 480px;
+            gap: 8px;
+            margin: 25px auto 0;
+            max-width: 560px;
         }
 
         .afk-viewport {
             overflow: hidden;
-            border-radius: 4px;
             flex: 1 1 auto;
             min-width: 0;
         }
 
         .afk-track {
             display: flex;
+            width: 100%;
             transition: transform 0.4s ease;
         }
 
-        .afk-track img {
-            flex: 0 0 100%;
+        .afk-slide {
+            flex: 0 0 72%;
+            box-sizing: border-box;
+            padding: 0 6px;
+            opacity: 0.3;
+            filter: blur(3px);
+            transition: opacity 0.4s ease, filter 0.4s ease;
+        }
+
+        .afk-slide.active {
+            opacity: 1;
+            filter: blur(0);
+        }
+
+        .afk-slide img {
             width: 100%;
             aspect-ratio: 1 / 1;
             object-fit: cover;
@@ -319,32 +332,27 @@
 
         .afk-nav {
             flex: 0 0 auto;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            border: 1px solid #ddd;
+            border: none;
             background: none;
             color: #888;
             font-family: 'JetBrains Mono', monospace;
-            font-size: 20px;
+            font-size: 22px;
             line-height: 1;
+            padding: 6px;
             cursor: pointer;
-            transition: color 0.2s, border-color 0.2s;
+            transition: color 0.2s;
         }
 
         .afk-nav:hover {
             color: #3B82F6;
-            border-color: #3B82F6;
         }
 
         body.night-mode .afk-nav {
-            border-color: #444;
             color: #999;
         }
 
         body.night-mode .afk-nav:hover {
             color: #3B82F6;
-            border-color: #3B82F6;
         }
 
         /* Collapsible Section Headings */
@@ -460,20 +468,20 @@
         <h3 class="section-heading collapsed" role="button" tabindex="0" aria-expanded="false">When AFK <span class="arrow">↓</span></h3>
         <div class="section-content collapsed">
         <div class="afk-carousel">
-            <button class="afk-nav afk-prev" aria-label="Previous photo">‹</button>
+            <button class="afk-nav afk-prev" aria-label="Previous photo">←</button>
             <div class="afk-viewport">
                 <div class="afk-track">
-                    <img src="https://i.imgur.com/VuXvAOW.jpeg">
-                    <img src="https://i.imgur.com/210cTCu.png">
-                    <img src="https://i.imgur.com/jwMXot3.jpeg">
-                    <img src="https://i.imgur.com/ov6CHXX.jpeg">
-                    <img src="https://i.imgur.com/A1WVqW8.png">
-                    <img src="https://i.imgur.com/n7Q0kMH.jpeg">
-                    <img src="https://i.imgur.com/5Og9L2Y.jpeg">
-                    <img src="https://i.imgur.com/JvoFKJJ.png">
+                    <div class="afk-slide"><img src="https://i.imgur.com/VuXvAOW.jpeg"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/210cTCu.png"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/jwMXot3.jpeg"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/ov6CHXX.jpeg"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/A1WVqW8.png"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/n7Q0kMH.jpeg"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/5Og9L2Y.jpeg"></div>
+                    <div class="afk-slide"><img src="https://i.imgur.com/JvoFKJJ.png"></div>
                 </div>
             </div>
-            <button class="afk-nav afk-next" aria-label="Next photo">›</button>
+            <button class="afk-nav afk-next" aria-label="Next photo">→</button>
         </div>
         </div>
     </div>
@@ -514,17 +522,21 @@
         (() => {
             const track = document.querySelector('.afk-track');
             if (!track) return;
-            const slides = track.children.length;
+            const slides = Array.from(track.children);
+            const SLIDE = 72; // slide width as % of viewport
             let index = 0;
             const update = () => {
-                track.style.transform = `translateX(-${index * 100}%)`;
+                // centre the active slide, neighbours peek on either side
+                track.style.transform = `translateX(${(100 - SLIDE) / 2 - index * SLIDE}%)`;
+                slides.forEach((s, i) => s.classList.toggle('active', i === index));
             };
             const go = (step) => {
-                index = (index + step + slides) % slides;
+                index = (index + step + slides.length) % slides.length;
                 update();
             };
             document.querySelector('.afk-prev').addEventListener('click', () => go(-1));
             document.querySelector('.afk-next').addEventListener('click', () => go(1));
+            update();
         })();
     </script>
 </body>
